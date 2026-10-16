@@ -458,6 +458,7 @@ body.on-page main>.page.cur{display:block}
 .kbo i{background:var(--y);opacity:.8}
 .hexdiv{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,22px);margin-top:clamp(72px,8vw,112px)}
 .hexdiv::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--y) 20%,var(--y) 80%,transparent)}
+.hexdiv.solo{margin-top:0}.hexdiv.pre{margin:0 0 clamp(48px,6vw,72px)}
 .hexdiv span{position:relative;width:clamp(16px,2vw,26px);aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y)}
 .hexdiv span:nth-child(5){width:clamp(30px,3.6vw,48px)}
 .hexdiv span:nth-child(odd):not(:nth-child(5)){background:#fff}
@@ -707,7 +708,7 @@ dl.dd dd a{color:var(--y)}
         <h2 class="an" id="ev-h"><span style="display:block">RCS 9</span><span class="y" style="display:block">Combat Circus</span></h2>
         <span class="facts">
           <span><b>28.11.2026</b><span>Dresdner Weihnachts-Circus · 18:00 Uhr</span></span>
-          <span><b>2.000+</b><span>Zuschauer live</span></span>
+          <span><b data-count>2.000+</b><span>Zuschauer live</span></span>
           <span><b class="y">Städteturnier</b><span>Dresden, Berlin, Frankfurt, Düsseldorf</span></span>
         </span>
       </span>
@@ -716,6 +717,8 @@ dl.dd dd a{color:var(--y)}
 <div class="mus" aria-label="Fight Card RCS 9"><div class="mu main go up"><div class="pics"><div><img src="fx/yusufi.jpg" alt="Jan Yusufi" loading="lazy"></div><div><img src="fx/cherepanov.jpg" alt="Nikolaj Cherepanov" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Jan</small>Yusufi</span><span></span><span class="an r"><small>Nikolaj</small>Cherepanov</span></div><div class="slot">Main Event · Titelkampf bis 75 kg</div></div><div class="mu go up"><div class="pics"><div><img src="fx/kulaev.jpg" alt="Ikhvan Kulaev" loading="lazy"></div><div><img src="fx/tyson.jpg" alt="Hasan Tyson" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Ikhvan</small>Kulaev</span><span></span><span class="an r"><small>Hasan</small>Tyson</span></div><div class="slot">Rückkampf</div></div><div class="mu go up"><div class="pics"><div><img src="fx/bayat.jpg" alt="Hussain Bayat" loading="lazy"></div><div><img src="fx/saget.jpg" alt="Théo Saget" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Hussain</small>Bayat</span><span></span><span class="an r"><small>Théo</small>Saget</span></div><div class="slot">Fight</div></div><div class="mu" style="justify-content:center;padding:28px 22px;gap:12px"><span class="an" style="font-size:34px;line-height:1">Plus <span class="y">Städteturnier</span></span><p style="color:var(--soft);font-size:15px">Zum ersten Mal kämpfen vier Städte gegeneinander: Dresden, Berlin, Frankfurt und Düsseldorf. Dazu weitere Bare-Knuckle-Kämpfe.</p><a class="btn p" href="#rcs-9" style="align-self:flex-start">Zur Event-Seite</a></div></div>
   </div>
 </section>
+
+<div class="kband solo" aria-hidden="true" style="margin:0 0 clamp(64px,7vw,96px)"><div class="kb kb1"><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i></div><div class="kb kb2 kbo"><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i></div></div>
 
 <!-- 3 Was ist RCS -->
 <section class="sec who" aria-labelledby="who-h" style="padding-top:0">
@@ -777,6 +780,9 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
+<div class="w" style="padding-top:clamp(56px,6vw,80px)"><div class="hexdiv solo" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+</div>
+
 <!-- Zuletzt im Ring -->
 <section class="sec" aria-labelledby="zl-h" style="padding-top:clamp(64px,7vw,96px)">
   <div class="w">
@@ -826,6 +832,8 @@ dl.dd dd a{color:var(--y)}
       </div>
     </div>
 
+    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i></div><div class="kb kb2 kbo"><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i></div></div>
+
     <div class="pblock">
       <h2 class="an">Das erste <span class="y">Städteturnier</span></h2>
       <p class="lead" style="margin-bottom:28px;max-width:60ch">Statt Ländern treten diesmal vier deutsche Städte gegeneinander an. Welche Stadt setzt sich durch und holt den Sieg?</p>
@@ -858,7 +866,7 @@ dl.dd dd a{color:var(--y)}
       </div>
     </div>
 
-    <div class="pblock nextf"><div><div class="an">Tickets für RCS 9</div><p>Ticketarten und Preise findest du im offiziellen Ticketshop.</p></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Zum Ticketshop</a></div>
+    <div class="pblock nextf" data-tx data-slide><div><div class="an">Tickets für RCS 9</div><p>Ticketarten und Preise findest du im offiziellen Ticketshop.</p></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Zum Ticketshop</a></div>
   </div>
 </section>
 
@@ -902,7 +910,7 @@ dl.dd dd a{color:var(--y)}
         </div>
       </div>
     </div>
-    <div class="pblock nextf"><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächster Kampf · 28.11.2026 · Dresden</small><div class="an">RCS 9: Titelkampf vs. Nikolaj Cherepanov</div></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a></div>
+    <div class="pblock nextf" data-tx data-slide><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächster Kampf · 28.11.2026 · Dresden</small><div class="an">RCS 9: Titelkampf vs. Nikolaj Cherepanov</div></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a></div>
     <div class="pblock inf">
       <div>
         <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:24px">Seine <span class="y">Geschichte</span></h2>
@@ -953,6 +961,7 @@ dl.dd dd a{color:var(--y)}
         <div class="box"><h3 class="an">Erlaubt &amp; verboten</h3><p><span class="ph">Platzhalter</span> Erlaubte Techniken, Fouls und Verwarnungen.</p></div>
       </div>
     </div>
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
     <div class="pblock">
       <h2 class="an">Gewichts<span class="y">klassen</span></h2>
       <p class="lead" style="margin-bottom:28px;max-width:62ch">Bei der RINGLIFE Combat Series gibt es acht Gewichtsklassen. Die Zahl ist jeweils das Höchstgewicht der Klasse.</p>
@@ -979,6 +988,7 @@ dl.dd dd a{color:var(--y)}
       <div class="box"><h3 class="an">Ticketarten</h3><p><span class="ph">Platzhalter</span> Kategorien und Preise für RCS 9 eintragen, zum Beispiel Stehplatz, Sitzplatz und Ringside.</p></div>
       <div class="box"><h3 class="an">Ticket-Service</h3><p>Fragen zu deiner Bestellung: rcs@myshow.de oder 0221 650680, Montag bis Freitag von 10 bis 16 Uhr.</p></div>
     </div>
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
     <div class="pblock inf">
       <div>
         <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">Am <span class="y">Eventtag</span></h2>
@@ -1020,6 +1030,7 @@ dl.dd dd a{color:var(--y)}
       <div class="box"><h3 class="an">2 · Underground</h3><p>Newcomer starten bei den Underground-Events, nah am Ring und mit Länderturnier.</p></div>
       <div class="box"><h3 class="an">3 · Main Events</h3><p>Wer überzeugt, kämpft sich zu den Main Events und um den Titel hoch.</p></div>
     </div>
+    <div class="hexdiv pre" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
     <div class="fone">
       <div class="fbox go up">
         <div class="an h">Fighter werden</div>
@@ -1299,6 +1310,8 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
+<div class="kband solo" aria-hidden="true" style="margin:0 0 clamp(56px,6vw,80px)"><div class="kb kb1"><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i></div><div class="kb kb2 kbo"><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i></div></div>
+
 <!-- 8 Fighter werden: Teaser -->
 <section class="join" aria-labelledby="mm-h">
   <img src="rcs/rcs-winner.webp" alt="" loading="lazy">
@@ -1429,12 +1442,12 @@ dl.dd dd a{color:var(--y)}
     items.forEach(function(e){io.observe(e)});
   }
 
-  // Übergänge auf der Partner-Seite: Wisch-Effekt, Hexagon-Trenner, Zähler, Laufbänder
+  // Übergänge auf der ganzen Seite: Wisch-Effekt, Hexagon-Trenner, Zähler, Laufbänder
   (function(){
-    var pg=document.getElementById('partner-werden');
-    if(!pg||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-    // Überschriften: Der Clip-Pfad versteckt sie, deshalb beobachten wir den umgebenden Block
-    pg.querySelectorAll('.pblock h2').forEach(function(h){h.setAttribute('data-wipe','');h.parentNode.__wipe=h});
+    if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var heads=document.querySelectorAll('main h2.h2, main .pblock h2, main .inf h2.an');
+    heads.forEach(function(h){if(h.closest('.pwh'))return;h.setAttribute('data-wipe','');h.parentNode.__wipe=h;
+      if(h.dataset.go){delete h.dataset.go;h.classList.add('go')}});
     document.documentElement.classList.add('tx');
     function fmt(v,d){return v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d})}
     function count(el){
@@ -1442,25 +1455,29 @@ dl.dd dd a{color:var(--y)}
       var raw=m[1],suf=m[2],dec=(raw.split(',')[1]||'').length,val=parseFloat(raw.replace(/\./g,'').replace(',','.'));
       var grp=raw.indexOf('.')>-1,t0=null;
       function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-k,3),v=val*e;
-        var s=dec?fmt(v,dec):(grp?fmt(Math.round(v),0):String(Math.round(v)));el.textContent=s+suf;if(k<1)requestAnimationFrame(step)}
+        el.textContent=(dec?fmt(v,dec):(grp?fmt(Math.round(v),0):String(Math.round(v))))+suf;if(k<1)requestAnimationFrame(step)}
       requestAnimationFrame(step);
     }
     var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;
-      var t=x.target;t.classList.add('in');if(t.__wipe)t.__wipe.classList.add('in');if(t.hasAttribute('data-count'))count(t);io2.unobserve(t)})},{threshold:.35});
-    pg.querySelectorAll('.pw-num .an,.aud b,.pwh-hex .an').forEach(function(e){e.setAttribute('data-count','');io2.observe(e)});
-    pg.querySelectorAll('[data-tx]').forEach(function(e){io2.observe(e)});
-    var io3=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.__wipe.classList.add('in');io3.unobserve(x.target)}})},{rootMargin:'0px 0px -18% 0px'});
-    pg.querySelectorAll('[data-wipe]').forEach(function(h){io3.observe(h.parentNode)});
+      var t=x.target;t.classList.add('in');if(t.hasAttribute('data-count'))count(t);io2.unobserve(t)})},{threshold:.35});
+    document.querySelectorAll('#partner-werden .pw-num .an,#partner-werden .aud b,.pwh-hex .an').forEach(function(e){e.setAttribute('data-count','')});
+    document.querySelectorAll('[data-count],[data-tx]').forEach(function(e){io2.observe(e)});
+    // Überschriften: Der Clip-Pfad versteckt sie, deshalb beobachten wir den umgebenden Block
+    var io3=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.__wipe.classList.add('in');io3.unobserve(x.target)}})},{rootMargin:'0px 0px -15% 0px'});
+    document.querySelectorAll('[data-wipe]').forEach(function(h){io3.observe(h.parentNode)});
     // Laufbänder und Hintergrundtext bewegen sich mit dem Scrollen
-    var bands=[].slice.call(pg.querySelectorAll('.kband')),bg=pg.querySelector('.pwh .bgtxt'),tick2=false;
-    function move(){tick2=false;if(!document.body.classList.contains('on-page')||!pg.classList.contains('cur'))return;
-      var vh=innerHeight;
-      bands.forEach(function(b){var r=b.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var k=(vh-r.top)/(vh+r.height);
+    var bands=[].slice.call(document.querySelectorAll('.kband')),bg=document.querySelector('.pwh .bgtxt'),busy=false;
+    var pend=[].slice.call(document.querySelectorAll('[data-wipe],[data-tx]'));
+    function move(){busy=false;var vh=innerHeight;
+      // Sicherheitsnetz bei sehr schnellem Scrollen: alles, was schon über dem unteren Rand liegt, wird aufgedeckt
+      pend=pend.filter(function(e){if(e.classList.contains('in'))return false;var t=(e.hasAttribute('data-wipe')?e.parentNode:e).getBoundingClientRect();
+        if(t.height&&t.top<vh*.9){e.classList.add('in');if(e.hasAttribute('data-count'))count(e);return false}return true});
+      bands.forEach(function(b){var r=b.getBoundingClientRect();if(!r.height||r.bottom<0||r.top>vh)return;var k=(vh-r.top)/(vh+r.height);
         b.children[0].style.transform='translateX('+(-6-k*22)+'%)';b.children[1].style.transform='translateX('+(-34+k*22)+'%)'});
-      if(bg){var y=scrollY;if(y<1200)bg.style.transform='rotate(-11deg) translateX('+(-y*0.25)+'px)'}
+      if(bg&&bg.offsetParent){var y=scrollY;if(y<1200)bg.style.transform='rotate(-11deg) translateX('+(-y*0.25)+'px)'}
     }
-    addEventListener('scroll',function(){if(!tick2){tick2=true;requestAnimationFrame(move)}},{passive:true});
-    addEventListener('hashchange',function(){setTimeout(move,50)});move();
+    addEventListener('scroll',function(){if(!busy){busy=true;requestAnimationFrame(move)}},{passive:true});
+    addEventListener('hashchange',function(){setTimeout(move,60)});move();
   })();
 
   // Countdown bis RCS 9 (Beginn 18:00 Uhr laut Ticketshop)
