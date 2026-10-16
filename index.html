@@ -450,28 +450,22 @@ body.on-page main>.page.cur{display:block}
   #rail-pw .row .info .val{font-size:44px}#rail-pw .row .info .pf b{font-size:22px}
 }
 /* Übergänge Partner-Seite */
-.kband{position:relative;width:100vw;margin:clamp(72px,8vw,112px) 0 0 calc(50% - 50vw);overflow:hidden;display:flex;flex-direction:column;gap:4px}
-.kb{display:flex;align-items:center;gap:.45em;width:max-content;white-space:nowrap;font-family:var(--an);font-size:clamp(38px,5.6vw,84px);line-height:1;text-transform:uppercase;padding:.14em 0;will-change:transform}
-.kb i{flex:none;width:.42em;aspect-ratio:1/.866;clip-path:var(--hex);background:currentColor}
-.kb1{background:var(--y);color:#000;transform:translateX(-12%)}
-.kbo{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45);transform:translateX(-30%)}
-.kbo i{background:var(--y);opacity:.8}
-.hexdiv{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,22px);margin-top:clamp(72px,8vw,112px)}
-.hexdiv::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--y) 20%,var(--y) 80%,transparent)}
+.kband{position:relative;width:100vw;margin:clamp(64px,7vw,96px) 0 0 calc(50% - 50vw);overflow:hidden;padding:14px 0;border-top:1px solid #1c1c1c;border-bottom:1px solid #1c1c1c}
+.kb{display:flex;align-items:center;gap:.6em;width:max-content;white-space:nowrap;font-family:var(--an);font-size:clamp(24px,2.6vw,38px);line-height:1;text-transform:uppercase;will-change:transform}
+.kb i{flex:none;width:.32em;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);opacity:.7}
+.kbo{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28);transform:translateX(-20%)}
+.hexdiv{position:relative;display:flex;justify-content:center;align-items:center;gap:14px;margin-top:clamp(64px,7vw,96px)}
+.hexdiv::before{content:"";position:absolute;left:10%;right:10%;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(160,240,60,.45) 30%,rgba(160,240,60,.45) 70%,transparent)}
 .hexdiv.solo{margin-top:0}.hexdiv.pre{margin:0 0 clamp(48px,6vw,72px)}
-.hexdiv span{position:relative;width:clamp(16px,2vw,26px);aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y)}
-.hexdiv span:nth-child(5){width:clamp(30px,3.6vw,48px)}
-.hexdiv span:nth-child(odd):not(:nth-child(5)){background:#fff}
-html.tx .hexdiv::before{transform:scaleX(0);transition:transform 1s cubic-bezier(.7,0,.2,1)}
-html.tx .hexdiv span{transform:scale(0) rotate(-60deg);transition:transform .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(.35s + var(--i) * 90ms)}
+.hexdiv span{position:relative;width:12px;aspect-ratio:1/.866;clip-path:var(--hex);background:#3a3a3a}
+.hexdiv span:nth-child(3){width:18px;background:var(--y)}
+html.tx .hexdiv::before{transform:scaleX(0);transition:transform 1.1s ease}
+html.tx .hexdiv span{opacity:0;transition:opacity .6s ease;transition-delay:calc(.3s + var(--i) * 80ms)}
 html.tx .hexdiv.in::before{transform:none}
-html.tx .hexdiv.in span{transform:none}
-html.tx [data-wipe]{position:relative;width:fit-content;clip-path:inset(-10% 100% -10% 0);transition:clip-path .85s cubic-bezier(.7,0,.2,1)}
-html.tx [data-wipe]::after{content:"";position:absolute;top:-8%;bottom:-8%;left:0;width:22px;background:var(--y);transform:skewX(-11deg);opacity:0}
+html.tx .hexdiv.in span{opacity:1}
+html.tx [data-wipe]{clip-path:inset(-10% 100% -10% 0);transition:clip-path .7s cubic-bezier(.4,0,.2,1)}
 html.tx [data-wipe].in{clip-path:inset(-10% -40px -10% 0)}
-html.tx [data-wipe].in::after{animation:slash .85s cubic-bezier(.7,0,.2,1) forwards}
-@keyframes slash{0%{left:-22px;opacity:1}80%{left:calc(100% + 4px);opacity:1}100%{left:calc(100% + 4px);opacity:0}}
-html.tx [data-slide]{transform:translateX(-8%) skewX(-11deg);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .5s}
+html.tx [data-slide]{transform:translateY(16px);opacity:0;transition:transform .7s ease,opacity .7s ease}
 html.tx [data-slide].in{transform:none;opacity:1}
 @media (prefers-reduced-motion:reduce){.kb{transform:none!important}}
 /* Partner werden */
@@ -718,7 +712,6 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
-<div class="kband solo" aria-hidden="true" style="margin:0 0 clamp(64px,7vw,96px)"><div class="kb kb1"><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i><span>RCS 9</span><i></i><span>Combat Circus</span><i></i><span>28.11.2026</span><i></i><span>Dresden</span><i></i><span>Bare Knuckle</span><i></i></div><div class="kb kb2 kbo"><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i><span>Fight for your way</span><i></i><span>Titelkampf</span><i></i><span>Städteturnier</span><i></i></div></div>
 
 <!-- 3 Was ist RCS -->
 <section class="sec who" aria-labelledby="who-h" style="padding-top:0">
@@ -780,7 +773,7 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
-<div class="w" style="padding-top:clamp(56px,6vw,80px)"><div class="hexdiv solo" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+<div class="w" style="padding-top:clamp(56px,6vw,80px)"><div class="hexdiv solo" data-tx aria-hidden="true"><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
 </div>
 
 <!-- Zuletzt im Ring -->
@@ -832,7 +825,7 @@ dl.dd dd a{color:var(--y)}
       </div>
     </div>
 
-    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i><span>Dresden</span><i></i><span>Berlin</span><i></i><span>Frankfurt</span><i></i><span>Düsseldorf</span><i></i></div><div class="kb kb2 kbo"><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i></div></div>
+    <div class="kband" aria-hidden="true"><div class="kb kbo"><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i><span>Städteturnier</span><i></i><span>Vier Städte</span><i></i><span>Ein Sieger</span><i></i></div></div>
 
     <div class="pblock">
       <h2 class="an">Das erste <span class="y">Städteturnier</span></h2>
@@ -961,7 +954,7 @@ dl.dd dd a{color:var(--y)}
         <div class="box"><h3 class="an">Erlaubt &amp; verboten</h3><p><span class="ph">Platzhalter</span> Erlaubte Techniken, Fouls und Verwarnungen.</p></div>
       </div>
     </div>
-    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
     <div class="pblock">
       <h2 class="an">Gewichts<span class="y">klassen</span></h2>
       <p class="lead" style="margin-bottom:28px;max-width:62ch">Bei der RINGLIFE Combat Series gibt es acht Gewichtsklassen. Die Zahl ist jeweils das Höchstgewicht der Klasse.</p>
@@ -988,7 +981,7 @@ dl.dd dd a{color:var(--y)}
       <div class="box"><h3 class="an">Ticketarten</h3><p><span class="ph">Platzhalter</span> Kategorien und Preise für RCS 9 eintragen, zum Beispiel Stehplatz, Sitzplatz und Ringside.</p></div>
       <div class="box"><h3 class="an">Ticket-Service</h3><p>Fragen zu deiner Bestellung: rcs@myshow.de oder 0221 650680, Montag bis Freitag von 10 bis 16 Uhr.</p></div>
     </div>
-    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
     <div class="pblock inf">
       <div>
         <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">Am <span class="y">Eventtag</span></h2>
@@ -1030,7 +1023,7 @@ dl.dd dd a{color:var(--y)}
       <div class="box"><h3 class="an">2 · Underground</h3><p>Newcomer starten bei den Underground-Events, nah am Ring und mit Länderturnier.</p></div>
       <div class="box"><h3 class="an">3 · Main Events</h3><p>Wer überzeugt, kämpft sich zu den Main Events und um den Titel hoch.</p></div>
     </div>
-    <div class="hexdiv pre" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+    <div class="hexdiv pre" data-tx aria-hidden="true"><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
     <div class="fone">
       <div class="fbox go up">
         <div class="an h">Fighter werden</div>
@@ -1101,8 +1094,6 @@ dl.dd dd a{color:var(--y)}
       <p style="margin-top:18px;font-size:13px;color:var(--mute)">12 Events seit 2024: RCS 1 bis RCS 8 und vier Underground-Events. Aufrufe aller Kampfvideos, Event-Vlogs, Reels und Storys.</p>
     </div>
 
-    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i></div><div class="kb kb2 kbo"><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i></div></div>
-
     <div class="pblock">
       <h2 class="an">Wen deine Marke <span class="y">erreicht</span></h2>
       <p class="lead" style="margin-bottom:28px;max-width:62ch">Junge Männer aus Deutschland, die über klassische Werbung kaum noch zu erreichen sind und jedes Event live, im Stream und auf Social Media verfolgen.</p>
@@ -1121,7 +1112,7 @@ dl.dd dd a{color:var(--y)}
       <div class="rail" id="rail-pw"><div class="line go ly" aria-hidden="true"></div></div>
     </div>
 
-    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i></div><div class="kb kb2 kbo"><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i></div></div>
+    <div class="kband" aria-hidden="true"><div class="kb kbo"><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i></div></div>
 
     <div class="pblock">
       <h2 class="an">Sponsoren<span class="y">flächen</span></h2>
@@ -1165,7 +1156,7 @@ dl.dd dd a{color:var(--y)}
       <p style="margin-top:18px;font-size:13px;color:var(--mute)">Beispielhafte Darstellung. Pakete individuell kombinierbar.</p>
     </div>
 
-    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
 
     <div class="pblock">
       <h2 class="an">Hinter der <span class="y">Serie</span></h2>
@@ -1310,7 +1301,7 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
-<div class="kband solo" aria-hidden="true" style="margin:0 0 clamp(56px,6vw,80px)"><div class="kb kb1"><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i><span>Bare Knuckle</span><i></i><span>Boxen</span><i></i><span>Live auf YouTube</span><i></i><span>Underground</span><i></i><span>Main Events</span><i></i></div><div class="kb kb2 kbo"><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i></div></div>
+<div class="kband solo" aria-hidden="true" style="margin:0 0 clamp(56px,6vw,80px)"><div class="kb kbo"><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i><span>Fighter werden</span><i></i><span>Newcomer</span><i></i><span>Matchmaking</span><i></i><span>Ring frei</span><i></i></div></div>
 
 <!-- 8 Fighter werden: Teaser -->
 <section class="join" aria-labelledby="mm-h">
@@ -1473,8 +1464,8 @@ dl.dd dd a{color:var(--y)}
       pend=pend.filter(function(e){if(e.classList.contains('in'))return false;var t=(e.hasAttribute('data-wipe')?e.parentNode:e).getBoundingClientRect();
         if(t.height&&t.top<vh*.9){e.classList.add('in');if(e.hasAttribute('data-count'))count(e);return false}return true});
       bands.forEach(function(b){var r=b.getBoundingClientRect();if(!r.height||r.bottom<0||r.top>vh)return;var k=(vh-r.top)/(vh+r.height);
-        b.children[0].style.transform='translateX('+(-6-k*22)+'%)';b.children[1].style.transform='translateX('+(-34+k*22)+'%)'});
-      if(bg&&bg.offsetParent){var y=scrollY;if(y<1200)bg.style.transform='rotate(-11deg) translateX('+(-y*0.25)+'px)'}
+        b.children[0].style.transform='translateX('+(-26+k*10)+'%)'});
+      if(bg&&bg.offsetParent){var y=scrollY;if(y<1200)bg.style.transform='rotate(-11deg) translateX('+(-y*0.1)+'px)'}
     }
     addEventListener('scroll',function(){if(!busy){busy=true;requestAnimationFrame(move)}},{passive:true});
     addEventListener('hashchange',function(){setTimeout(move,60)});move();
