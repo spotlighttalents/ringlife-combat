@@ -423,6 +423,32 @@ body.on-page main>.page.cur{display:block}
 @media (max-width:760px){.cities{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .wks .city em{font-style:normal;font-size:11px;color:var(--soft)}
 .city.wk.on{background:var(--y)}.city.wk.on span{background:var(--y);color:#000}.city.wk.on small,.city.wk.on em{color:#000}
+/* Partner-Hero */
+.pwh{position:relative;overflow:hidden;min-height:clamp(700px,calc(100svh - 80px),860px);background:#070707}
+.pwh .bgtxt{z-index:0}
+.pwh-pic{position:absolute;top:0;bottom:92px;right:-90px;width:54%;z-index:1}
+.pwh-pic .sk{position:absolute;inset:0;transform:skewX(-11deg);transform-origin:bottom left;overflow:hidden;border-left:8px solid var(--y)}
+.pwh-pic img{position:absolute;top:0;left:-140px;width:calc(100% + 280px);max-width:none;height:100%;object-fit:cover;transform:skewX(11deg);filter:grayscale(.25) contrast(1.15) brightness(.72)}
+.pwh-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,7,0) 55%,rgba(7,7,7,.75));pointer-events:none}
+.pwh-hex{position:absolute;inset:0 0 92px;z-index:3;pointer-events:none}
+.pwh-hex .oct{position:absolute;width:190px;max-width:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.6))}
+.pwh-hex .oct .an{font-size:38px}
+.pwh-hex .h1x{right:30%;top:12%}.pwh-hex .h2x{right:7%;top:36%}.pwh-hex .h3x{right:27%;top:60%}
+.pwh-in{position:relative;z-index:4;display:flex;flex-direction:column;align-items:flex-start;gap:22px;padding-top:36px;padding-bottom:150px}
+.pwh-in h1{font-size:clamp(76px,9.4vw,152px);line-height:.9;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+.pwh-in .lead{color:#e6e6e6}
+@media (max-width:1100px){.pwh-pic{width:50%}.pwh-hex .oct{width:150px}.pwh-hex .oct .an{font-size:30px}.pwh-hex .h1x{right:22%}.pwh-hex .h3x{right:20%}}
+@media (max-width:900px){
+  .pwh{min-height:0;display:flex;flex-direction:column}
+  .pwh-in{order:1;padding-top:24px;padding-bottom:28px}
+  .pwh-in h1{font-size:clamp(60px,17vw,96px)}
+  .pwh-pic{order:2;position:relative;top:auto;bottom:auto;right:auto;width:auto;height:300px;margin-left:40px}
+  .pwh-hex{order:3;position:relative;inset:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:-70px 14px 24px;pointer-events:auto}
+  .pwh-hex .oct{position:relative;width:100%;right:auto;top:auto}
+  .pwh-hex .oct .an{font-size:24px}.pwh-hex .oct em{font-size:9px}.pwh-hex .oct small{font-size:8px}
+  .pwh .spons{order:4;position:relative}
+  #rail-pw .row .info .val{font-size:44px}#rail-pw .row .info .pf b{font-size:22px}
+}
 /* Partner werden */
 .pw-num{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .pw-num .oct{max-width:none}
@@ -1007,16 +1033,26 @@ dl.dd dd a{color:var(--y)}
 
 
 <!-- Unterseite: Partner werden (Sponsoren) -->
-<section class="sec page" id="partner-werden" aria-labelledby="pp-h">
-  <div class="w">
-    <a class="back" href="#top">← Zurück zur Startseite</a>
-    <div class="phead">
+<section class="page pwpage" id="partner-werden" aria-labelledby="pp-h">
+  <div class="pwh">
+    <div class="bgtxt an" aria-hidden="true"><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div><div>Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring Sponsoring</div></div>
+    <div class="pwh-pic" aria-hidden="true"><div class="sk"><img src="rcs/rcs-ringhall.webp" alt=""></div></div>
+    <div class="pwh-hex">
+      <div class="oct ko h1x"><div class="in2"><small>Aufrufe</small><span class="an">60 Mio.</span><em>über alle Events</em></div></div>
+      <div class="oct h2x"><div class="in2"><small>Live</small><span class="an">2.000+</span><em>Zuschauer bei RCS 9</em></div></div>
+      <div class="oct h3x"><div class="in2"><small>Zielgruppe</small><span class="an">96 %</span><em>Männer, 83 % 18–35</em></div></div>
+    </div>
+    <div class="w pwh-in">
+      <a class="back" href="#top">← Zurück zur Startseite</a>
       <div class="kick">Partner werden · Für Sponsoren</div>
-      <h1 class="an" id="pp-h"><span style="display:block">Deine Marke.</span><span class="y" style="display:block">Mitten im Ring.</span></h1>
-      <p class="lead" style="max-width:62ch">Die RINGLIFE Combat Series ist die größte Bare-Knuckle-Organisation in Deutschland. Hinter der Serie steht Ringlife, der größte Kampfsport-Creator Deutschlands. Seine Community trägt jedes Event, live in der Halle, im Stream und auf Social Media.</p>
+      <h1 class="an" id="pp-h"><span style="display:block">Deine Marke.</span><span class="y" style="display:block">Mitten</span><span class="y" style="display:block">im Ring.</span></h1>
+      <p class="lead" style="max-width:52ch">Die größte Bare-Knuckle-Organisation Deutschlands. Hinter der Serie steht Ringlife, der größte Kampfsport-Creator des Landes. Seine Community trägt jedes Event, live, im Stream und auf Social Media.</p>
       <div class="btns"><a class="btn p" href="#partner-werden" data-to="pw-form">Paket anfragen</a><a class="btn g" href="#partner-werden" data-to="pw-form" data-pick="Sponsoren-Deck">Sponsoren-Deck anfragen</a></div>
     </div>
-
+    <div class="spons" aria-label="Partner der RINGLIFE Combat Series"><div class="strk"><span><img src="lg/esn.png" alt="ESN"></span><span><img src="lg/zasta.png" alt="Zasta"></span><span><img src="lg/harley.png" alt="Harley-Davidson" class="tall"></span><span><span class="txtlogo">Allianz<small>Schwarz &amp; Kahle</small></span></span><span><img src="lg/ringlife-fw.png" alt="RINGLIFE Fightwear" class="tall"></span><span><img src="lg/innovation.png" alt="Innovation Media"></span><span><img src="lg/nft.png" alt="NFT Gym"></span><span class="dup" aria-hidden="true"><img src="lg/esn.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/zasta.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/harley.png" alt="" class="tall"></span><span class="dup" aria-hidden="true"><span class="txtlogo">Allianz<small>Schwarz &amp; Kahle</small></span></span><span class="dup" aria-hidden="true"><img src="lg/ringlife-fw.png" alt="" class="tall"></span><span class="dup" aria-hidden="true"><img src="lg/innovation.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/nft.png" alt=""></span></div></div>
+  </div>
+  <div class="sec" style="padding-top:clamp(64px,7vw,96px)">
+  <div class="w">
     <div class="pblock" style="margin-top:0">
       <h2 class="an">Die Serie <span class="y">in Zahlen</span></h2>
       <div class="pw-num">
@@ -1038,6 +1074,14 @@ dl.dd dd a{color:var(--y)}
         <div><b>83 %</b><h3>18 bis 35 Jahre</h3><p>Gen Z und Millennials, die Kampfsport live und online verfolgen.</p></div>
         <div><b>87 %</b><h3>Deutschland</h3><p>Dazu Österreich und die Schweiz, fast alles im DACH-Raum.</p></div>
       </div>
+    </div>
+
+    <div class="pblock">
+      <div class="top2" style="margin-bottom:40px">
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:1;margin:0"><span style="display:block">Jedes Event.</span><span class="y" style="display:block">60 Mio. Aufrufe.</span></h2>
+        <p class="lead">Von RCS 1 bis RCS 8 und den vier Underground-Events: zusammen 60 Mio. Aufrufe, davon 10,7 Mio. auf YouTube und 49,3 Mio. auf Instagram. Pro Event zählen alle Kampfvideos auf RINGLIFE COMBAT, die Event-Vlogs auf dem Hauptkanal RINGLIFE sowie Reels und Storys auf @ringlife_combat.</p>
+      </div>
+      <div class="rail" id="rail-pw"><div class="line go ly" aria-hidden="true"></div></div>
     </div>
 
     <div class="pblock">
@@ -1080,13 +1124,6 @@ dl.dd dd a{color:var(--y)}
         </div>
       </div>
       <p style="margin-top:18px;font-size:13px;color:var(--mute)">Beispielhafte Darstellung. Pakete individuell kombinierbar.</p>
-    </div>
-
-    <div class="pblock">
-      <h2 class="an">Partner der <span class="y">Serie</span></h2>
-      <div class="plogos">
-        <img src="lg/esn.png" alt="ESN"><img src="lg/zasta.png" alt="Zasta"><img src="lg/harley.png" alt="Harley-Davidson"><img src="lg/ringlife-fw.png" alt="RINGLIFE Fightwear"><img src="lg/innovation.png" alt="Innovation Media"><img src="lg/nft.png" alt="NFT National Fighting Team">
-      </div>
     </div>
 
     <div class="pblock">
@@ -1143,6 +1180,7 @@ dl.dd dd a{color:var(--y)}
       </div>
     </div>
   </div>
+</div>
 </section>
 
 <!-- Unterseite: Impressum -->
@@ -1320,6 +1358,19 @@ dl.dd dd a{color:var(--y)}
   });
   html+='<div class="tail go up"><div><small>Nächstes Event · 28.11.2026</small><span class="an">RCS 9 <span class="y">Combat Circus</span></span></div><a class="btn p" href="#rcs-9">Zur Event-Seite</a></div>';
   rail.insertAdjacentHTML('beforeend',html);
+  // Zeitstrahl mit Reichweiten (Partner-Seite)
+  var rp=document.getElementById('rail-pw');
+  if(rp){var hp='';
+    F.forEach(function(f,i){
+      var info='<div class="info go up"><small>'+f[0]+' · '+f[1]+'</small><span class="val an">'+f[2]+'<i>Aufrufe</i></span>'+
+        '<span class="pf"><span><i>YouTube</i><b class="an">'+f[3]+'</b></span><span><i>Instagram</i><b class="an">'+f[4]+'</b></span></span>'+
+        '<h3 class="an">'+f[5]+'</h3><p>'+f[6]+'</p></div>';
+      var vid='<a class="vid go wd" href="https://www.youtube.com/watch?v='+f[8]+'" target="_blank" rel="noopener" aria-label="Meistgesehener Kampf von '+f[1]+' auf YouTube"><img src="'+img(f[7])+'" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" fill="#000" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span><span class="lbl">Top-Kampf · '+f[9]+' Aufrufe</span></a>';
+      hp+='<div class="row'+(i%2?' r':'')+'">'+(i%2?info+'<div class="node" aria-hidden="true"><i></i></div>'+vid:vid+'<div class="node" aria-hidden="true"><i></i></div>'+info)+'</div>';
+    });
+    hp+='<div class="tail go up"><div><small>Nächstes Event · 28.11.2026</small><span class="an">RCS 9 <span class="y">mit deiner Marke</span></span></div><a class="btn p" href="#partner-werden" data-to="pw-form">Jetzt anfragen</a></div>';
+    rp.insertAdjacentHTML('beforeend',hp);
+  }
   var t='';F.slice(-3).reverse().forEach(function(f){
     t+='<article class="tc go up"><a class="vid" href="https://www.youtube.com/watch?v='+f[8]+'" target="_blank" rel="noopener" aria-label="Kampf des Abends von '+f[1]+' auf YouTube ansehen"><img src="'+img(f[7])+'" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" fill="#000" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span></a><small>'+f[0]+' · '+f[1]+'</small><h3 class="an">'+f[5]+'</h3><p>'+f[6]+'</p></article>';
   });
