@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RINGLIFE Combat Series</title>
+<meta name="description" content="RINGLIFE Combat Series: Bare Knuckle und Boxen live. RCS 9 Combat Circus am 28.11.2026 im Dresdner Weihnachts-Circus. Tickets, Fight Card, Livestream.">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RINGLIFE Combat Series · RCS 9 Combat Circus">
+<meta property="og:description" content="28.11.2026 · Dresdner Weihnachts-Circus. Titelkampf, Bare Knuckle und das erste Städteturnier.">
+<meta property="og:image" content="rcs/rcs9-fightcard.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: Designsprache der Spotlight-RCS-Seite (schräge Bildstreifen, Outline-Text, Sechseck-Kacheln, Zeitstrahl) im RCS-Brandbook: Neongrün #A0F03C, Schwarz, Weiß; alle Schrägen 11 Grad; Ring als Sechseck. */
+:root{
+  --y:#a0f03c;          /* Pantone 802C */
+  --bg:#070707;
+  --panel:#111111;
+  --panel2:#161616;
+  --line:#262626;
+  --white:#ffffff;
+  --text:#e6e6e6;
+  --soft:#bdbdbd;
+  --mute:#a3a3a3;
+  --an:"Anton","Zuume",Impact,"Arial Narrow",sans-serif;
+  --body:"Montserrat","Proxima Nova","Helvetica Neue",Arial,sans-serif;
+  --hex:polygon(25% 6.7%,75% 6.7%,100% 50%,75% 93.3%,25% 93.3%,0 50%);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+h1,h2,h3,p{margin:0}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--y);outline-offset:3px}
+.an{font-family:var(--an);font-weight:400;text-transform:uppercase;letter-spacing:.005em}
+.y{color:var(--y)}
+.w{max-width:1440px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));position:relative}
+@media (min-width:760px){.w{padding-left:max(64px,env(safe-area-inset-left,0px));padding-right:max(64px,env(safe-area-inset-right,0px))}}
+.kick{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.kick::before{content:"";width:40px;height:4px;background:var(--y);flex:none;transform:skewX(-11deg)}
+.h2{font-size:clamp(52px,7vw,104px);line-height:.98;text-wrap:balance}
+.lead{font-size:clamp(17px,1.4vw,19px);line-height:1.6;color:var(--text)}
+.top2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:32px 64px;align-items:end;margin-bottom:56px}
+@media (max-width:1000px){.top2{grid-template-columns:1fr}}
+.sec{padding-block:clamp(80px,9vw,120px)}
+
+/* Buttons: 11°-Schnitt */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 30px;font-family:var(--body);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;white-space:nowrap;
+  clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.p{background:var(--y);color:#000}
+.btn.g{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.btn.k{background:#000;color:#fff}
+.btn.ico{width:62px;padding:0;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+
+/* Einblend-Animationen: Ruhezustand sichtbar, Bewegung erst beim Eintreten */
+.go.up{animation:a-up .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.go.wd{animation:a-wd 1.1s cubic-bezier(.7,0,.2,1) both;animation-delay:var(--d,0s)}
+.go.wl{animation:a-wl 1.1s cubic-bezier(.7,0,.2,1) both;animation-delay:var(--d,0s)}
+.go.hx{animation:a-hx .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.go.ly{animation:a-ly 2.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes a-up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes a-wd{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes a-wl{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes a-hx{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes a-ly{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+/* Header */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(7,7,7,.92);backdrop-filter:blur(10px);border-bottom:1px solid #1c1c1c}
+header.nav .w{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:80px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}.mark{flex:none}
+.mark{display:block;width:48px;aspect-ratio:900/709;background:var(--y);-webkit-mask:url(logo-rcs.png) center/contain no-repeat;mask:url(logo-rcs.png) center/contain no-repeat}
+.brand b{font-family:var(--an);font-weight:400;font-size:18px;line-height:.95;letter-spacing:.06em}
+.menu{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0}
+.menu a{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d0d0d0}
+.menu a:hover{color:var(--y)}
+.menu .btn{min-height:44px;padding:0 22px;font-size:13px;color:#000}
+.burger{display:none;width:48px;height:44px;background:#1c1c1c;border:0;color:#fff;font-size:20px;cursor:pointer;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+@media (max-width:1100px){
+  .menu .opt{display:none}.burger{display:block}
+  .open .menu{position:absolute;top:80px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px max(20px,env(safe-area-inset-left,0px)) 20px;background:var(--bg);border-bottom:1px solid #1c1c1c}
+  .open .menu .opt{display:block}.open .menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .open .menu .btn{margin-top:12px}
+}
+@media (max-width:420px){.brand b{display:none}}
+
+/* 1 Hero */
+.hero{position:relative;overflow:hidden;min-height:clamp(820px,calc(100svh - 80px),940px)}
+.bgtxt{position:absolute;left:-220px;top:-40px;width:2600px;transform:rotate(-11deg);font-size:200px;line-height:.92;color:transparent;-webkit-text-stroke:1.5px rgba(160,240,60,.16);white-space:nowrap;pointer-events:none}
+.bgtxt div:nth-child(even){margin-left:-320px}
+.hero .in{position:relative;max-width:1440px;margin:0 auto;min-height:inherit}
+.strip{position:absolute;top:-40px;bottom:-40px;transform:skewX(-11deg);overflow:hidden}
+.strip img{position:absolute;top:0;height:100%;width:auto;max-width:none;transform:skewX(11deg);filter:grayscale(1) contrast(1.25) brightness(.55)}
+.strip.s1{left:700px;width:230px;border-left:4px solid var(--y)}.strip.s1 img{left:-660px}
+.strip.s2{left:950px;width:230px;background:var(--y)}.strip.s2 img{left:-590px;filter:grayscale(1) contrast(1.3);mix-blend-mode:multiply}
+.strip.s3{left:1200px;width:320px;border-left:4px solid var(--y)}.strip.s3 img{left:-300px}
+.hero .eyebrow{position:absolute;left:64px;top:64px;z-index:4}
+.hero h1{position:absolute;left:58px;top:96px;font-size:146px;line-height:.86;z-index:4}
+.hero h1 span{display:block}
+.hero .cut{position:absolute;left:690px;bottom:0;height:min(860px,96%);width:auto;z-index:3;filter:drop-shadow(0 30px 60px rgba(0,0,0,.8))}
+.badge{position:absolute;left:1210px;top:110px;z-index:5;width:160px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.badge b{font-family:var(--an);font-weight:400;font-size:50px;line-height:1}
+.badge small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+.hero .copy{position:absolute;left:64px;top:560px;width:620px;z-index:4;display:flex;flex-direction:column;gap:26px}
+.claim{font-family:var(--an);font-size:38px;line-height:1;text-transform:uppercase}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.mini{display:flex;gap:40px;flex-wrap:wrap}
+.mini b{display:block;font-family:var(--an);font-weight:400;font-size:36px;line-height:1}
+.mini span{font-size:13px;color:var(--soft)}
+@media (max-width:1180px){.hero h1{font-size:118px}.hero .cut{left:auto;right:-60px;height:88%}.badge{left:auto;right:40px}.strip.s1{left:56%}.strip.s2{left:72%}.strip.s3{left:88%}}
+@media (max-width:760px){
+  .hero{min-height:0}.hero .in{min-height:0;padding:0 20px 44px}
+  .bgtxt{font-size:110px;left:-120px;top:60px}
+  .strip{top:170px;bottom:auto;height:520px}.strip.s1{left:8%;width:110px}.strip.s2{left:39%;width:110px}.strip.s3{left:70%;width:150px}
+  .strip.s1 img{left:-380px}.strip.s2 img{left:-360px}.strip.s3 img{left:-340px}
+  .hero .eyebrow{position:relative;left:auto;top:auto;padding-top:24px;font-size:11px;letter-spacing:.16em}
+  .hero h1{position:relative;left:-4px;top:auto;font-size:clamp(62px,19vw,96px);margin-top:10px}
+  .hero .cut{position:relative;left:auto;right:auto;bottom:auto;height:auto;width:min(100%,380px);margin:-30px auto 0}
+  .badge{width:104px;right:16px;top:330px}.badge b{font-size:34px}.badge small{font-size:8px}
+  .hero .copy{position:relative;left:auto;top:auto;width:auto;margin-top:-80px;gap:18px;padding-top:24px;background:linear-gradient(180deg,rgba(7,7,7,0),var(--bg) 30%)}
+  .claim{font-size:28px}.hero .btn{flex:1 1 auto;padding:0 18px;font-size:13px}.hero .btn.ico{flex:0 0 62px}.mini{gap:22px}.mini b{font-size:28px}
+}
+
+/* Countdown-Leiste */
+.bar{background:var(--y);color:#000}
+.bar .w{display:flex;align-items:center;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-block:18px}
+.bar .ev{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.bar .ev small{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.bar .ev .an{font-size:30px;line-height:1}
+.cd{display:flex;gap:18px}
+.cd div{display:flex;align-items:baseline;gap:5px}
+.cd b{font-family:var(--an);font-weight:400;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.cd span{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.bar .btn{min-height:48px}
+
+/* 2 Nächstes Event */
+.poster{position:relative;display:flex;flex-direction:column;background:#0e0e0e;border-top:4px solid var(--y);overflow:hidden}
+.poster .pic{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000}
+.poster .pic img{width:100%;height:100%;object-fit:cover;transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.poster:hover .pic img{transform:scale(1.03)}
+.poster .tag{position:absolute;right:24px;top:20px;z-index:2;background:var(--y);color:#000;padding:10px 14px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.poster .cp{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px 48px;padding:36px 48px 44px}
+.poster .cp .kick{flex-basis:100%}
+.poster h2{font-size:clamp(48px,5.6vw,80px);line-height:.88}
+.facts{display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.25)}
+.facts>span{padding:14px 28px 0;border-left:1px solid rgba(255,255,255,.25)}
+.facts>span:first-child{padding-left:0;border-left:0}
+.facts b{display:block;font-family:var(--an);font-weight:400;font-size:30px;line-height:1}
+.facts span span{font-size:13px;color:var(--soft)}
+@media (max-width:640px){.poster .pic{aspect-ratio:4/5}.poster .cp{padding:24px 20px 32px}.facts>span{padding:12px 16px 0}.facts>span:nth-child(3){padding-left:0;border-left:0}.facts b{font-size:22px}}
+.card{margin-top:28px;display:flex;flex-direction:column}
+.bout{display:grid;grid-template-columns:200px minmax(0,1fr) 54px minmax(0,1fr);align-items:center;gap:18px;padding:22px 24px;background:var(--panel);border-left:4px solid var(--line);margin-top:8px}
+.bout.main{border-left-color:var(--y);background:var(--panel2)}
+.bout .slot{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.bout.main .slot{color:var(--y)}
+.bout .f{font-family:var(--an);font-size:clamp(26px,2.8vw,40px);line-height:1;text-transform:uppercase}
+.bout .f small{display:block;font-family:var(--body);text-transform:none;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:4px;letter-spacing:.04em}
+.bout .f.r{text-align:right}
+.bout .vs{width:54px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-family:var(--an);font-size:18px}
+@media (max-width:760px){.bout{grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);padding:18px 16px}.bout .slot{grid-column:1/-1}.bout .vs{width:44px;font-size:15px}}
+
+/* 3 Was ist RCS + Zahlen */
+.who{position:relative}
+.ghost{position:absolute;right:-40px;top:40px;font-size:300px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(160,240,60,.14);pointer-events:none}
+.who .grid{display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:64px}
+.who .txt{display:flex;flex-direction:column;gap:26px}
+.who .txt p{font-size:18px;line-height:1.6;color:var(--soft)}.who .txt p:first-of-type{color:var(--text)}
+.who .pic{position:relative;min-height:600px}
+.who .pic .sk{position:absolute;left:40px;right:0;top:0;bottom:0;transform:skewX(-11deg);overflow:hidden;border-left:6px solid var(--y)}
+.who .pic .sk img{position:absolute;left:-60px;top:0;width:124%;height:100%;object-fit:cover;object-position:55% 40%;transform:skewX(11deg)}
+.chip{position:absolute;left:0;bottom:32px;background:var(--y);color:#000;padding:14px 20px;font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.rec{margin-top:64px;border-top:1px solid var(--line);padding-top:28px}
+.rec .hd{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.rec .hd .an{font-size:44px;line-height:1}
+.legend{display:flex;gap:20px;font-size:13px;font-weight:700;color:var(--soft)}
+.legend i{display:inline-block;width:14px;height:14px;margin-right:8px;vertical-align:-2px;clip-path:var(--hex)}
+.octs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.oct{position:relative;aspect-ratio:1;max-width:200px;width:100%;justify-self:center}
+.oct::before,.oct .in2{clip-path:var(--hex)}
+.oct::before{content:"";position:absolute;inset:0;background:#fff}
+.oct .in2{position:absolute;inset:3px 4px;background:#0e0e0e;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:3px;padding:0 14px}
+.oct.ko::before,.oct.ko .in2{background:var(--y)}.oct.ko .in2{color:#000}
+.oct small{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.oct.ko small,.oct.ko em{color:#000}
+.oct .an{font-size:30px;line-height:1}
+.oct b{font-size:13px;line-height:1.25;margin-top:3px}
+.oct em{font-style:normal;font-size:11px;color:var(--soft)}
+@media (max-width:1180px){.who .grid{grid-template-columns:1fr}.who .pic{min-height:460px}.octs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.octs{grid-template-columns:repeat(2,minmax(0,1fr))}.ghost{font-size:180px}.who .pic{min-height:360px}.rec .hd .an{font-size:32px}}
+
+/* 4 Formate */
+.con{position:relative;background:#0c0c0c;overflow:hidden}
+.slab{position:absolute;left:calc(50% + 250px);top:0;bottom:0;width:280px;transform:skewX(-11deg);background:var(--y)}
+.vert{position:absolute;right:30px;top:60px;writing-mode:vertical-rl;font-size:150px;line-height:.85;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.22);white-space:nowrap;pointer-events:none}
+.stack{position:absolute;left:calc(50% + 40px);right:40px;top:110px;bottom:110px;z-index:1}
+.stack>div{position:absolute;overflow:hidden;transform:skewX(-11deg);border-left:6px solid var(--y);box-shadow:0 30px 60px rgba(0,0,0,.6)}
+.stack>div img{position:absolute;left:-12%;top:0;width:124%;height:100%;object-fit:cover;transform:skewX(11deg)}
+.stack .p1{left:4%;top:0;width:58%;height:46%}.stack .p2{right:0;top:30%;width:56%;height:40%}.stack .p3{left:10%;bottom:0;width:62%;height:36%}
+.stack .tg{position:absolute;z-index:2;background:#000;padding:8px 12px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.stack .t1{left:6%;top:40%}.stack .t2{right:4%;top:64%;background:var(--y);color:#000}.stack .t3{left:14%;bottom:30%}
+.con .w{z-index:2}
+.col{width:min(680px,100%);padding-block:clamp(80px,9vw,110px);display:flex;flex-direction:column;gap:36px}
+.chaps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 40px}
+.chap{display:flex;flex-direction:column;gap:8px}
+.chap .ln{height:3px;background:var(--y);margin-bottom:10px}
+.chap .num{display:flex;align-items:baseline;gap:14px}
+.chap .num .an{font-size:56px;line-height:.9;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55)}
+.chap .num small{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}
+.chap h3{font-size:28px;line-height:1.05}
+.chap p{font-size:15px;line-height:1.55;color:var(--soft)}
+.motto{font-size:44px;line-height:1;margin-top:8px}
+@media (max-width:1100px){.slab{left:50%;width:200px}.vert{display:none}.stack{position:relative;left:auto;right:auto;top:auto;bottom:auto;height:520px;margin:56px 20px 0}}
+@media (max-width:560px){.chaps{grid-template-columns:1fr}.motto{font-size:34px}.stack{height:420px}}
+
+/* 5 Zeitstrahl */
+.rail{position:relative;display:flex;flex-direction:column;gap:28px}
+.rail .line{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--y);transform-origin:top}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 80px minmax(0,1fr);align-items:center;min-height:200px}
+.row .node{display:flex;justify-content:center}
+.row .node i{width:26px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);display:block}
+.row .info{display:flex;flex-direction:column;gap:4px}
+.row.r .info{order:1;align-items:flex-end;text-align:right}.row.r .node{order:2}.row.r .vid{order:3}
+.row .info small{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.row .info .val{font-size:72px;line-height:.95;color:var(--y)}
+.row .info .val i{font-family:var(--body);font-style:normal;font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--mute);margin-left:10px;vertical-align:middle}
+.row .info .pf{display:flex;gap:28px;margin-top:8px}
+.row .info .pf>span{display:flex;flex-direction:column;gap:2px}
+.row.r .info .pf>span{align-items:flex-end}
+.row .info .pf i{font-style:normal;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.row .info .pf b{font-family:var(--an);font-weight:400;font-size:28px;line-height:1.05}
+.row .info h3{font-size:28px;margin-top:6px}
+.row .info p{font-size:16px;line-height:1.5;color:var(--soft);max-width:460px}
+.vid{position:relative;display:block;height:200px;clip-path:polygon(39px 0,100% 0,calc(100% - 39px) 100%,0 100%);overflow:hidden;background:#000}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.2) brightness(.6);transition:transform .5s,filter .5s}
+.vid:hover img{transform:scale(1.05);filter:grayscale(0) brightness(.8)}
+.vid .pl{position:absolute;left:50%;top:50%;width:64px;aspect-ratio:1/.866;margin:-28px 0 0 -32px;clip-path:var(--hex);background:var(--y);display:flex;align-items:center;justify-content:center}
+.vid .pl svg{width:18px;height:18px}
+.vid .lbl{position:absolute;left:46px;bottom:16px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.tail{display:flex;flex-direction:column;align-items:center;gap:12px;padding:40px 0 0;position:relative}
+.tail div{background:var(--bg);padding:10px 18px;text-align:center}
+.tail small{display:block;font-size:13px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.tail .an{font-size:40px;line-height:1}
+@media (max-width:900px){
+  .rail .line{left:13px}
+  .row,.row.r{grid-template-columns:26px minmax(0,1fr);column-gap:20px;row-gap:14px;min-height:0}
+  .row .node,.row.r .node{order:0;grid-row:1/span 2;align-self:start;padding-top:8px}
+  .row .info,.row.r .info{order:1;align-items:flex-start;text-align:left}.row.r .info .pf>span{align-items:flex-start}
+  .row .vid,.row.r .vid{order:2;grid-column:2}
+  .row .info .val{font-size:56px}.vid{height:190px}.tail{align-items:flex-start}
+}
+@media (max-width:760px){.vid .lbl{left:24px;font-size:10px}}
+
+/* 6 Partner */
+.ringst{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:center}
+.ringpic{position:relative;-webkit-mask-image:radial-gradient(75% 80% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(75% 80% at 50% 50%,#000 60%,transparent 100%)}
+.ringpic img{width:100%;height:auto}
+.hs{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border:0;padding:0;clip-path:var(--hex);background:var(--y);color:#000;font-family:var(--an);font-size:22px;cursor:pointer;transition:transform .3s}
+.hs.on{transform:scale(1.3)}
+.zones{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.zones li{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;background:var(--panel);border-left:4px solid var(--line);transition:background .25s,border-color .25s}
+.zones li b{flex:none;width:40px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;font-family:var(--an);font-weight:400;font-size:19px;display:flex;align-items:center;justify-content:center}
+.zones li h3{font-size:24px;line-height:1.05}
+.zones li p{font-size:15px;line-height:1.45;color:var(--soft);margin-top:4px}
+.zones li.on{background:#1a1a1a;border-color:var(--y)}
+.grp{display:flex;align-items:center;gap:20px;margin:56px 0 22px;font-family:var(--an);font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.grp::after{content:"";flex:1;height:1px;background:#2a2a2a}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tl{position:relative;margin:0;height:300px;background:var(--panel);overflow:hidden}
+.tl img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tl:hover img{transform:scale(1.05)}
+.tl figcaption{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:10px;background:var(--y);color:#000;font-family:var(--an);font-size:21px;text-transform:uppercase;padding:4px 12px 4px 4px}
+.tl figcaption i{font-style:normal;width:30px;height:30px;border:2px solid #000;display:flex;align-items:center;justify-content:center;font-size:17px}
+.pcta{margin-top:56px;background:var(--y);color:#000;padding:34px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px 32px;flex-wrap:wrap}
+.pcta .an{font-size:42px;line-height:1}
+.pcta p{font-size:16px;font-weight:600;margin-top:6px;max-width:60ch}
+.rings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px}
+.rings>div{background:var(--panel);display:flex;align-items:center;gap:24px;padding:26px}
+.ringc{position:relative;width:128px;height:128px;flex:none}
+.ringc svg{width:128px;height:128px;transform:rotate(-90deg)}
+.ringc b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--an);font-weight:400;font-size:36px}
+.rings h3{font-size:24px;line-height:1.05}
+.rings p{font-size:14px;line-height:1.45;color:var(--mute);margin-top:6px}
+.fd{margin-top:56px;border-top:1px solid var(--line);padding-top:28px}
+.fd .lbl{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:18px}
+.fd .list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.fd .list>div{background:var(--panel);border-top:4px solid var(--y);padding:18px;display:flex;flex-direction:column;gap:6px}
+.fd b{font-size:22px;line-height:1.05}.fd span{font-size:14px;line-height:1.45;color:var(--soft)}
+@media (max-width:1100px){.ringst{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.rings{grid-template-columns:1fr}.fd .list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.tl{height:210px}.tl figcaption{font-size:16px}.hs{width:34px;height:34px;margin:-17px 0 0 -17px;font-size:16px}.fd .list{grid-template-columns:1fr}.pcta{padding:28px 22px}.pcta .an{font-size:32px}}
+
+/* 7 Community */
+.com{background:#0c0c0c}
+.com .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);gap:56px 80px;align-items:center}
+.igc{display:flex;flex-direction:column;gap:18px;background:var(--panel2);border:1px solid #2a2a2a;padding:26px;box-shadow:0 40px 80px rgba(0,0,0,.6);transform:perspective(900px) rotateY(-6deg)}
+.igc .rw{display:flex;align-items:center;gap:18px}
+.igc .av{width:84px;height:84px;border-radius:50%;padding:3px;background:conic-gradient(var(--y),#e1306c,var(--y));flex:none}
+.igc .av img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--panel2)}
+.igc .st{flex:1;display:flex;justify-content:space-around;text-align:center;gap:8px}
+.igc .st b{display:block;font-family:var(--an);font-weight:400;font-size:28px;line-height:1}
+.igc .st span{font-size:12px;color:var(--mute)}
+.igc .gr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.igc .gr div{height:150px;overflow:hidden}
+.igc .gr img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.igc .gr div:hover img{transform:scale(1.08)}
+.soc{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.sc{flex:1 1 260px;display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--panel);border:1px solid var(--line);transition:border-color .2s,transform .2s}
+.sc:hover{border-color:var(--y);transform:translateY(-2px)}
+.sc i{width:50px;height:50px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--y);color:#000}
+.sc i svg{width:22px;height:22px}
+.sc b{display:block;font-family:var(--an);font-weight:400;font-size:22px;line-height:1.1;text-transform:uppercase}
+.sc span{font-size:13px;color:var(--soft)}
+@media (max-width:1100px){.com .grid{grid-template-columns:1fr}.igc{transform:none}}
+@media (max-width:520px){.igc .gr div{height:100px}.igc .st b{font-size:22px}}
+
+/* 8 Formulare */
+.forms{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.fbox{background:#141414;border-top:4px solid var(--y);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:18px}
+.fbox .an.h{font-size:38px;line-height:1}
+.fbox .sub{font-size:15px;color:var(--soft)}
+.fbox form{display:flex;flex-direction:column;gap:16px}
+.lbl{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.fl{display:flex;flex-direction:column;gap:8px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fbox input[type=text],.fbox input[type=email],.fbox input[type=number],.fbox input[type=url],.fbox textarea{width:100%;min-width:0;min-height:52px;padding:0 16px;background:#0c0c0c;border:1.5px solid #333;border-radius:0;color:#fff;font:16px var(--body)}
+.fbox textarea{padding:14px 16px;resize:vertical;min-height:90px}
+.fbox input:focus,.fbox textarea:focus{border-color:var(--y);outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid #444;font-size:14px;font-weight:700;cursor:pointer;color:#fff}
+.chips input:checked+span{background:var(--y);color:#000;border-color:var(--y)}
+.chips input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.fbox button[type=submit]{min-height:58px;background:var(--y);color:#000;border:0;font:800 15px var(--body);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)}
+.done{background:var(--y);color:#000;padding:14px 16px;font-size:15px;font-weight:600}
+@media (max-width:1000px){.forms{grid-template-columns:1fr}}
+@media (max-width:560px){.two{grid-template-columns:1fr}}
+
+/* 9 Shop + Newsletter */
+.duo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}
+.shop{position:relative;min-height:460px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:clamp(24px,3vw,40px)}
+.shop>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1) contrast(1.15) brightness(.7)}
+.shop::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#070707 8%,rgba(7,7,7,0) 70%)}
+.shop>*:not(img){position:relative;z-index:1}
+.wm{display:block;width:180px;aspect-ratio:900/652;background:#fff;-webkit-mask:url(logo-full.png) center/contain no-repeat;mask:url(logo-full.png) center/contain no-repeat}
+.news{background:var(--y);color:#000;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.news .an{font-size:clamp(40px,4.4vw,60px);line-height:.92}
+.news p{font-weight:600}
+.news form{display:flex;gap:10px;flex-wrap:wrap}
+.news input{flex:1 1 220px;min-width:0;min-height:54px;padding:0 16px;border:2px solid #000;border-radius:0;background:#fff;color:#000;font:16px var(--body)}
+.news input:focus{outline:2px solid #000;outline-offset:2px}
+.news .done{background:#000;color:#fff;flex-basis:100%}
+@media (max-width:900px){.duo{grid-template-columns:1fr}}
+
+/* 10 Schlussbild */
+.bro{position:relative;min-height:760px;overflow:hidden;display:flex;align-items:flex-end}
+.bro>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.bro .sh{position:absolute;inset:0;background:linear-gradient(180deg,#070707,rgba(7,7,7,0) 20%,rgba(7,7,7,0) 45%,rgba(7,7,7,.88) 78%,#070707),linear-gradient(90deg,rgba(7,7,7,.6),rgba(7,7,7,0) 55%)}
+.bro .w{width:100%;padding-bottom:72px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.bro .an.big{font-size:clamp(56px,8vw,112px);line-height:.88;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+
+footer{border-top:1px solid #1c1c1c}
+footer .w{padding-block:64px 32px;display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:36px}
+footer .wm{background:var(--y)}
+footer h4{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:15px}
+footer a:hover{color:var(--y)}
+.legal{grid-column:1/-1;border-top:1px solid #1c1c1c;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--mute)}
+@media (max-width:860px){footer .w{grid-template-columns:1fr 1fr}footer .first{grid-column:1/-1}}
+
+
+
+/* Formate: zwei Karten */
+.fmts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.fc{background:var(--panel);display:flex;flex-direction:column;border-top:4px solid var(--y)}
+.fc .img{position:relative;height:clamp(240px,26vw,380px);overflow:hidden;background:#000}
+.fc .img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.2) brightness(.7);transition:filter .5s,transform .8s}
+.fc:hover .img img{filter:grayscale(0) brightness(.85);transform:scale(1.03)}
+.fc.u .img::after{content:"";position:absolute;inset:0;background:url(grunge.jpg) center/cover;mix-blend-mode:screen;opacity:.35;pointer-events:none}
+.fc .lab{position:absolute;left:24px;bottom:22px;z-index:2;background:var(--y);color:#000;font-family:var(--an);font-size:22px;padding:6px 16px;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.fc .bd{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:18px;flex:1}
+.fc .bd small{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.fc h3{font-size:clamp(44px,5vw,72px);line-height:.9}
+.fc .bd>p{font-size:17px;line-height:1.6;color:var(--text)}
+.fc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.fc li{display:flex;gap:14px;align-items:center;padding-block:14px;border-top:1px solid var(--line);font-size:16px;font-weight:600}
+.fc li:last-child{border-bottom:1px solid var(--line)}
+.fc li::before{content:"";flex:none;width:18px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y)}
+.fc .btn{align-self:flex-start;margin-top:auto}
+@media (max-width:900px){.fmts{grid-template-columns:1fr}}
+
+/* Event-Unterseite */
+main>.page{display:none}
+body.on-page main>*{display:none}
+body.on-page main>.page.cur{display:block}
+.phead{padding-top:clamp(40px,5vw,72px);margin-bottom:clamp(40px,5vw,64px);display:flex;flex-direction:column;gap:22px}
+.phead h1{font-size:clamp(64px,9vw,140px);line-height:1.1}
+.pblock{margin-top:clamp(56px,6vw,88px)}
+.pblock>h2{font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px}
+.qlinks{display:flex;flex-direction:column;gap:10px}
+.ql{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:var(--panel);border-left:4px solid var(--line);transition:border-color .2s,background .2s}
+.ql:hover{border-left-color:var(--y);background:#181818}
+.ql b{font-family:var(--an);font-weight:400;font-size:28px;line-height:1;text-transform:uppercase}
+.ql span{display:block;font-size:14px;color:var(--soft);margin-top:4px}
+.ql i{flex:none;width:40px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:800}
+.join{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:flex-end}
+.join>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1) contrast(1.2) brightness(.55)}
+.join::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,7,7,.95),rgba(7,7,7,.5) 55%,rgba(7,7,7,.2))}
+.join .w{position:relative;z-index:1;width:100%;padding-block:72px;display:flex;flex-direction:column;gap:24px}
+/* Städteturnier */
+.cities{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.city{position:relative;aspect-ratio:1/.866;clip-path:var(--hex);background:#fff;display:flex}
+.city span{position:absolute;inset:3px 4px;clip-path:var(--hex);background:#0e0e0e;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}
+.city b{font-family:var(--an);font-weight:400;font-size:clamp(24px,2.6vw,36px);line-height:1;text-transform:uppercase}
+.city small{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--y)}
+@media (max-width:760px){.cities{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wks .city em{font-style:normal;font-size:11px;color:var(--soft)}
+.city.wk.on{background:var(--y)}.city.wk.on span{background:var(--y);color:#000}.city.wk.on small,.city.wk.on em{color:#000}
+/* Tabellen */
+.tbl{overflow-x:auto}
+.tbl table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.tbl th{text-align:left;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding:12px 14px;border-bottom:2px solid var(--y)}
+.tbl td{padding:16px 14px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.tbl td.an{font-size:22px}
+/* Fighter-Übersicht */
+.fgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.fcard{background:var(--panel);display:flex;flex-direction:column;border-top:4px solid var(--line);transition:border-color .2s}
+.fcard:hover{border-top-color:var(--y)}
+.fcard .ph2{aspect-ratio:1;overflow:hidden}
+.fcard .ph2 img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.15);transition:filter .4s,transform .6s}
+.fcard:hover .ph2 img{filter:none;transform:scale(1.03)}
+.fcard .bd{padding:20px 22px 24px;display:flex;flex-direction:column;gap:6px}
+.fcard .bd small{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.fcard .bd .an{font-size:36px;line-height:1}
+.fcard .bd p{font-size:14px;color:var(--soft)}
+.fcard .more{margin-top:12px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--y)}
+.fcard .more.off{color:var(--mute)}
+@media (max-width:900px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.fgrid{grid-template-columns:1fr}}
+/* Fighter-Profil */
+.prof{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px 72px;align-items:center}
+.prof .pic{position:relative;min-height:520px}
+.prof .sk{position:absolute;left:30px;right:0;top:0;bottom:0;transform:skewX(-11deg);overflow:hidden;border-left:6px solid var(--y)}
+.prof .sk img{position:absolute;left:-60px;top:0;width:130%;height:100%;object-fit:cover;object-position:50% 20%;transform:skewX(11deg)}
+.prof h1{font-size:clamp(64px,8vw,124px);line-height:.86}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:8px 14px;background:var(--panel2);border:1px solid var(--line);font-size:13px;font-weight:700;letter-spacing:.06em}
+.tags span.ph{background:#e9e2b8;color:#000;border-color:#e9e2b8}
+.pstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pstats .oct{max-width:none}
+.nextf{display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap;background:var(--y);color:#000;padding:28px 32px}
+.nextf .an{font-size:clamp(30px,3.4vw,46px);line-height:.95}
+.nextf p{font-weight:600}
+@media (max-width:960px){.prof{grid-template-columns:1fr}.prof .pic{min-height:420px}}
+@media (max-width:520px){.pstats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Regeln */
+.rounds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rd{background:var(--panel);border-top:4px solid var(--y);padding:24px;display:flex;flex-direction:column;gap:6px}
+.rd.x{border-top-style:dashed;border-top-color:var(--mute);background:transparent;outline:1px dashed #333;outline-offset:-1px}
+.rd small{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rd b{font-family:var(--an);font-weight:400;font-size:56px;line-height:1}
+.rd span{font-size:14px;color:var(--soft)}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.box{background:var(--panel);padding:24px 26px;display:flex;flex-direction:column;gap:10px;border-left:4px solid var(--y)}
+.box h3{font-size:26px;line-height:1.05}
+.box p{font-size:15px;color:var(--soft)}
+.legaltxt{max-width:760px;display:flex;flex-direction:column;gap:18px;color:var(--text)}
+@media (max-width:900px){.mus{grid-template-columns:1fr}.mu.main{grid-column:auto}}
+.inf>*,.prof>*,.pblock{min-width:0}
+.pblock>h2,.inf h2,.phead h1,.prof h1{overflow-wrap:anywhere;hyphens:auto}
+@media (max-width:560px){.phead h1,.prof h1{font-size:56px}.pblock>h2,.inf h2.an{font-size:36px!important}.nextf{padding:24px 20px}.prof .sk{left:16px}}
+html,body{overflow-x:clip}
+@media (max-width:560px){.tbl table{min-width:0;font-size:13px}.tbl th,.tbl td{padding:12px 8px}.tbl th{font-size:10px;letter-spacing:.1em}.tbl td.an{font-size:18px}.hero h1{text-shadow:0 4px 28px rgba(0,0,0,.55)}.hero .eyebrow{letter-spacing:.1em}}
+.legaltxt h2{font-family:var(--an);font-weight:400;font-size:30px;text-transform:uppercase;margin-top:18px}
+@media (max-width:900px){.rounds{grid-template-columns:repeat(2,minmax(0,1fr))}.cols3{grid-template-columns:1fr}}
+.back{display:inline-flex;align-items:center;gap:10px;margin-bottom:40px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.back:hover{color:var(--y)}
+.teas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tc{display:flex;flex-direction:column;gap:14px}
+.tc .vid{height:220px}
+.tc small{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tc .an{font-size:30px;line-height:1}
+.tc p{font-size:15px;color:var(--soft)}
+@media (max-width:900px){.teas{grid-template-columns:1fr}}
+
+/* Partnerleiste im Hero */
+.spons{position:absolute;left:0;right:0;bottom:0;z-index:6;background:rgba(7,7,7,.84);backdrop-filter:blur(6px);border-top:1px solid var(--line);overflow:hidden}
+.strk{display:flex;align-items:center;width:max-content;animation:scroll 38s linear infinite}
+.spons:hover .strk{animation-play-state:paused}
+.strk>span{flex:none;display:flex;align-items:center;justify-content:center;height:92px;padding:0 46px}
+.strk img{height:42px;width:auto;max-width:180px;object-fit:contain}
+.strk img.tall{height:56px}
+.strk .txtlogo{font-family:var(--body);font-weight:800;font-size:17px;letter-spacing:.02em;line-height:1.1;text-align:center;color:#fff}
+.strk .txtlogo small{display:block;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:760px){.spons{position:relative}.strk>span{height:76px;padding:0 30px}.strk img{height:34px}.strk img.tall{height:46px}}
+
+/* Paarungen mit Bildern */
+.mus{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.mu{background:var(--panel);display:flex;flex-direction:column;border-top:4px solid var(--line)}
+.mu.main{border-top-color:var(--y);grid-column:1/-1}
+.mu .pics{position:relative;display:grid;grid-template-columns:1fr 1fr}
+.mu .pics div{aspect-ratio:1;overflow:hidden}
+.mu.main .pics div{aspect-ratio:16/11}
+.mu .pics img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.15);transition:filter .4s,transform .6s}
+.mu:hover .pics img{filter:none;transform:scale(1.03)}
+.mu .vs{position:absolute;left:50%;top:50%;width:64px;aspect-ratio:1/.866;margin:-28px 0 0 -32px;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-family:var(--an);font-size:22px}
+.mu .names{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:end;gap:12px;padding:20px 22px 6px}
+.mu .names .an{font-size:clamp(26px,2.6vw,38px);line-height:1}
+.mu.main .names .an{font-size:clamp(34px,4.4vw,64px)}
+.mu .names small{display:block;font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--mute);text-transform:uppercase;margin-bottom:4px}
+.mu .names .r{text-align:right}
+@media (max-width:560px){.mu.main .names .an{font-size:26px}.mu .names .an{font-size:24px}.mu .names{padding:18px 16px 6px;gap:8px}}
+.mu .slot{padding:6px 22px 22px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.mu.main .slot{color:var(--y)}
+@media (max-width:900px){.mus{grid-template-columns:1fr}.mu.main .pics div{aspect-ratio:1}}
+
+/* Tickets & Infos, FAQ */
+.inf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px 72px;align-items:start}
+dl.dd{margin:0;display:flex;flex-direction:column}
+dl.dd div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding-block:16px;border-top:1px solid var(--line)}
+dl.dd div:last-child{border-bottom:1px solid var(--line)}
+dl.dd dt{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);padding-top:4px}
+dl.dd dd{margin:0;font-size:17px;color:#fff}
+dl.dd dd a{color:var(--y)}
+.ph{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#e9e2b8;color:#000;padding:3px 8px;vertical-align:middle}
+.faq{display:flex;flex-direction:column;gap:8px}
+.faq details{background:var(--panel);border-left:4px solid var(--line);transition:border-color .2s}
+.faq details[open]{border-left-color:var(--y)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-family:var(--an);font-size:24px;line-height:1.1;text-transform:uppercase}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:32px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--body);font-weight:800;font-size:18px;transition:transform .2s}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq details p{padding:0 20px 20px;color:var(--soft);font-size:16px;max-width:60ch}
+@media (max-width:1000px){.inf{grid-template-columns:1fr}}
+@media (max-width:520px){dl.dd div{grid-template-columns:1fr;gap:4px}}
+.fone{max-width:820px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.go{animation:none!important}*{transition:none!important}.strk{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.dup{display:none}}
+</style>
+
+<header class="nav" id="hdr">
+  <div class="w">
+    <a class="brand" href="#top" aria-label="RINGLIFE Combat Series, zum Seitenanfang"><i class="mark" aria-hidden="true"></i><b>RINGLIFE<br>COMBAT SERIES</b></a>
+    <nav aria-label="Hauptmenü">
+      <ul class="menu" id="menu">
+        <li class="opt"><a href="#rcs-9">RCS 9</a></li>
+        <li class="opt"><a href="#alle-events">Events</a></li>
+        <li class="opt"><a href="#fighter">Fighter</a></li>
+        <li class="opt"><a href="#regeln">Regeln</a></li>
+        <li class="opt"><a href="#tickets">Tickets &amp; Infos</a></li>
+        <li class="opt"><a href="#watch">Watch</a></li>
+        <li class="opt"><a href="#fighter-werden">Fighter werden</a></li>
+        <li><a class="btn p" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets</a></li>
+        <li><button class="burger" id="burger" aria-expanded="false" aria-label="Menü öffnen">☰</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1 Hero -->
+<section class="hero" aria-labelledby="h1">
+  <div class="bgtxt an" aria-hidden="true"><div>Fight for your way · Fight for your way</div><div>Fight for your way · Fight for your way</div><div>Fight for your way · Fight for your way</div><div>Fight for your way · Fight for your way</div></div>
+  <div class="in">
+    <div class="strip s1 go wd" style="--d:.1s"><img src="rcs/rcs-bareknuckle.webp" alt=""></div>
+    <div class="strip s2 go wd" style="--d:.25s"><img src="rcs/rcs-peaky.webp" alt=""></div>
+    <div class="strip s3 go wd" style="--d:.4s"><img src="rcs/rcs-flames.webp" alt=""></div>
+    <div class="eyebrow kick go up">Bare Knuckle &amp; Boxen · Live-Events</div>
+    <h1 class="an go up" id="h1" style="--d:.1s"><span>Ringlife</span><span class="y">Combat</span><span class="y">Series</span></h1>
+    <img class="cut go up" style="--d:.3s" src="rcs/rcs-edmon-cut.webp" alt="Ringlife moderiert mit RCS-Mikrofon" width="953" height="1100">
+    <div class="copy">
+      <p class="claim go up" style="--d:.3s">Fight for your way.</p>
+      <div class="btns go up" style="--d:.4s">
+        <a class="btn p" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets RCS 9</a>
+        <a class="btn g" href="#watch">Livestream</a>
+        <a class="btn g ico" href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener" aria-label="RCS auf Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a class="btn g ico" href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener" aria-label="RCS auf YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9L15.6 12z"/></svg></a>
+      </div>
+          </div>
+  </div>
+<div class="spons" aria-label="Partner der RINGLIFE Combat Series"><div class="strk"><span><img src="lg/esn.png" alt="ESN"></span><span><img src="lg/zasta.png" alt="Zasta"></span><span><img src="lg/harley.png" alt="Harley-Davidson" class="tall"></span><span><span class="txtlogo">Allianz<small>Schwarz &amp; Kahle</small></span></span><span><img src="lg/ringlife-fw.png" alt="RINGLIFE Fightwear" class="tall"></span><span><img src="lg/innovation.png" alt="Innovation Media"></span><span><img src="lg/nft.png" alt="NFT Gym"></span><span class="dup" aria-hidden="true"><img src="lg/esn.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/zasta.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/harley.png" alt="" class="tall"></span><span class="dup" aria-hidden="true"><span class="txtlogo">Allianz<small>Schwarz &amp; Kahle</small></span></span><span class="dup" aria-hidden="true"><img src="lg/ringlife-fw.png" alt="" class="tall"></span><span class="dup" aria-hidden="true"><img src="lg/innovation.png" alt=""></span><span class="dup" aria-hidden="true"><img src="lg/nft.png" alt=""></span></div></div>
+</section>
+
+<!-- Countdown-Leiste -->
+<div class="bar" role="region" aria-label="Countdown bis RCS 9">
+  <div class="w">
+    <div class="ev"><small>Nächstes Event · 28.11.2026 · 18:00 Uhr · Dresden</small><span class="an">RCS 9 Combat Circus</span></div>
+    <div class="cd">
+      <div><b class="cd-d">--</b><span>Tage</span></div>
+      <div><b class="cd-h">--</b><span>Std</span></div>
+      <div><b class="cd-m">--</b><span>Min</span></div>
+      <div><b class="cd-s">--</b><span>Sek</span></div>
+    </div>
+    <a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a>
+  </div>
+</div>
+
+<!-- 2 Nächstes Event -->
+<section class="sec" id="rcs9" aria-labelledby="ev-h">
+  <div class="w">
+    <a class="poster go wd" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener" aria-label="Tickets für RCS 9 Combat Circus">
+      <span class="pic"><img src="rcs/rcs9-fightcard.webp" srcset="rcs/rcs9-fightcard-960.webp 960w, rcs/rcs9-fightcard.webp 1920w" sizes="(max-width:1200px) 100vw, 1300px" alt="Fight Card RCS 9 Combat Circus „Bad Blood“: Bareknuckle-Titelkampf Jan Yusufi gegen Nikolaj Cherepanov, dazu Ikhvan Kulaev gegen Hasan Tyson und Hussain Bayat gegen Théo Saget" width="1920" height="1080"></span>
+      <span class="tag">Tickets ab 18</span>
+      <span class="cp">
+        <span class="kick">Das nächste Event · Bad Blood</span>
+        <h2 class="an" id="ev-h"><span style="display:block">RCS 9</span><span class="y" style="display:block">Combat Circus</span></h2>
+        <span class="facts">
+          <span><b>28.11.2026</b><span>Dresdner Weihnachts-Circus · 18:00 Uhr</span></span>
+          <span><b>2.000+</b><span>Zuschauer live</span></span>
+          <span><b class="y">Städteturnier</b><span>Dresden, Berlin, Frankfurt, Düsseldorf</span></span>
+        </span>
+      </span>
+    </a>
+    
+<div class="mus" aria-label="Fight Card RCS 9"><div class="mu main go up"><div class="pics"><div><img src="fx/yusufi.jpg" alt="Jan Yusufi" loading="lazy"></div><div><img src="fx/cherepanov.jpg" alt="Nikolaj Cherepanov" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Jan</small>Yusufi</span><span></span><span class="an r"><small>Nikolaj</small>Cherepanov</span></div><div class="slot">Main Event · Titelkampf bis 75 kg</div></div><div class="mu go up"><div class="pics"><div><img src="fx/kulaev.jpg" alt="Ikhvan Kulaev" loading="lazy"></div><div><img src="fx/tyson.jpg" alt="Hasan Tyson" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Ikhvan</small>Kulaev</span><span></span><span class="an r"><small>Hasan</small>Tyson</span></div><div class="slot">Rückkampf</div></div><div class="mu go up"><div class="pics"><div><img src="fx/bayat.jpg" alt="Hussain Bayat" loading="lazy"></div><div><img src="fx/saget.jpg" alt="Théo Saget" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Hussain</small>Bayat</span><span></span><span class="an r"><small>Théo</small>Saget</span></div><div class="slot">Fight</div></div><div class="mu" style="justify-content:center;padding:28px 22px;gap:12px"><span class="an" style="font-size:34px;line-height:1">Plus <span class="y">Städteturnier</span></span><p style="color:var(--soft);font-size:15px">Zum ersten Mal kämpfen vier Städte gegeneinander: Dresden, Berlin, Frankfurt und Düsseldorf. Dazu weitere Bare-Knuckle-Kämpfe.</p><a class="btn p" href="#rcs-9" style="align-self:flex-start">Zur Event-Seite</a></div></div>
+  </div>
+</section>
+
+<!-- 3 Was ist RCS -->
+<section class="sec who" aria-labelledby="who-h" style="padding-top:0">
+  <div class="ghost an" aria-hidden="true">RCS</div>
+  <div class="w">
+    <div class="grid">
+      <div class="txt">
+        <div class="kick go up">Die Liga</div>
+        <h2 class="an h2 go up" id="who-h" style="--d:.1s"><span style="display:block">Was ist die</span><span class="y" style="display:block">RCS?</span></h2>
+        <p class="go up" style="--d:.2s">Die RINGLIFE Combat Series ist die größte Bare-Knuckle-Organisation in Deutschland. Harte Bare-Knuckle-Kämpfe, Elite-Boxen, Länderturniere und große Titelkämpfe.</p>
+        <p class="go up" style="--d:.25s">Du sitzt nicht vor einer Bühne, du sitzt rund um den Ring. Nah genug, um jeden Schlag zu hören.</p>
+        <p class="go up" style="--d:.3s">Bei uns stehen keine Hochglanzhelden im Rampenlicht, sondern echte Kämpfer mit echter Geschichte. Menschen, die fallen und wieder aufstehen, egal woher sie kommen.</p>
+      </div>
+      <div class="pic">
+        <div class="sk go wl" style="--d:.2s"><img src="arena.jpg" alt="Volle Halle mit dem Ring in der Mitte und der Leinwand darüber" loading="lazy" style="object-position:50% 50%"></div>
+        <div class="chip">2.000 Fans. Ein Ring. Kein Entkommen.</div>
+      </div>
+    </div>
+      </div>
+</section>
+
+<!-- 4 Formate -->
+<section class="sec" id="formate" aria-labelledby="fo-h" style="background:#0c0c0c">
+  <div class="w">
+    <div class="top2">
+      <div style="display:flex;flex-direction:column;gap:22px"><div class="kick go up">Formate</div><h2 class="an h2 go up" id="fo-h" style="--d:.1s"><span style="display:block">Zwei Formate.</span><span class="y" style="display:block">Ein Ring.</span></h2></div>
+      <p class="lead go up" style="--d:.2s">Die großen Fight Nights mit Titelkämpfen oder die kleinen, rohen Abende, an denen die Newcomer ihren Namen machen.</p>
+    </div>
+    <div class="fmts">
+      <article class="fc go up">
+        <div class="img"><img src="rcs/rcs-hall.webp" alt="Main Event der RCS mit Pyro auf der Bühne und voller Halle" loading="lazy"><span class="lab">RCS 1 – RCS 9</span></div>
+        <div class="bd">
+          <small>Die große Bühne</small>
+          <h3 class="an">Main <span class="y">Events</span></h3>
+          <p>Die nummerierten Fight Nights der RINGLIFE Combat Series. Große Hallen, große Namen und der Kampf um den Titel.</p>
+          <ul>
+            <li>Große Titelkämpfe</li>
+            <li>Viele Bare-Knuckle-Kämpfe auf einer Karte</li>
+            <li>Ab und zu Länder- oder Städteturniere</li>
+          </ul>
+          <a class="btn p" href="#rcs-9">Nächstes Main Event: RCS 9</a>
+        </div>
+      </article>
+      <article class="fc u go up" style="--d:.1s">
+        <div class="img"><img src="halle.jpg" alt="Underground-Event mit Fans dicht um den Ring und grüner Beleuchtung" loading="lazy"><span class="lab">RCU 1 – RCU 4</span></div>
+        <div class="bd">
+          <small>Klein, nah, roh</small>
+          <h3 class="an">Under<span class="y">ground</span></h3>
+          <p>Die kleineren Events, nah am Ring und ohne Showfassade. Hier bekommen Newcomer im Bare Knuckle ihre Bühne.</p>
+          <ul>
+            <li>Bühne für Bare-Knuckle-Newcomer</li>
+            <li>Bei jedem Event ein Länderturnier</li>
+            <li>Fans stehen direkt am Ring</li>
+          </ul>
+          <a class="btn g" href="#newsletter">Termine per Newsletter</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Zuletzt im Ring -->
+<section class="sec" aria-labelledby="zl-h" style="padding-top:clamp(64px,7vw,96px)">
+  <div class="w">
+    <div class="top2" style="margin-bottom:40px">
+      <div style="display:flex;flex-direction:column;gap:22px"><div class="kick go up">Zuletzt im Ring</div><h2 class="an h2 go up" id="zl-h" style="--d:.1s"><span style="display:block">Die letzten</span><span class="y" style="display:block">Fight Nights.</span></h2></div>
+      <div class="go up" style="--d:.2s"><a class="btn g" href="#alle-events">Alle Events ansehen</a></div>
+    </div>
+    <div class="teas" id="teas"></div>
+  </div>
+</section>
+
+<!-- 5 Zeitstrahl -->
+<section class="sec page" id="alle-events" aria-labelledby="tl-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="top2">
+      <div style="display:flex;flex-direction:column;gap:24px"><div class="kick go up">Alle Events</div><h1 class="an h2 go up" id="tl-h" style="--d:.1s"><span style="display:block">Alle Events.</span><span class="y" style="display:block">Alle Kämpfe.</span></h1></div>
+      <p class="lead go up" style="--d:.2s">Von RCS 1 bis RCS 8 und den vier Underground-Events. Klick aufs Bild und du siehst den Kampf des Abends auf YouTube.</p>
+    </div>
+    <div class="rail" id="rail">
+      <div class="line go ly" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Unterseite: RCS 9 -->
+<section class="sec page" id="rcs-9" aria-labelledby="p9-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Main Event · RCS 9 · Bad Blood</div>
+      <h1 class="an" id="p9-h"><span style="display:block">Combat</span><span class="y" style="display:block">Circus</span></h1>
+      <p class="lead" style="max-width:60ch">Der Combat Circus ist zurück in Dresden. Zum zweiten Mal kämpft die RINGLIFE Combat Series im Weihnachts-Circus, mit einem Titelkampf, Bare Knuckle und Boxen und dem ersten Städteturnier.</p>
+      <div class="cd" style="color:#fff"><div><b class="cd-d">--</b><span>Tage</span></div><div><b class="cd-h">--</b><span>Std</span></div><div><b class="cd-m">--</b><span>Min</span></div><div><b class="cd-s">--</b><span>Sek</span></div></div>
+      <div class="btns"><a class="btn p" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a><a class="btn g" href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">Livestream auf YouTube</a></div>
+    </div>
+    <a class="poster" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener" aria-label="Tickets für RCS 9"><span class="pic"><img src="rcs/rcs9-fightcard.webp" alt="Fight Card RCS 9 Combat Circus „Bad Blood“" loading="lazy"></span></a>
+
+    <div class="pblock">
+      <h2 class="an">Fight <span class="y">Card</span></h2>
+      <div class="mus" style="margin-top:0">
+        <div class="mu main go up"><div class="pics"><div><img src="fx/yusufi.jpg" alt="Jan Yusufi" loading="lazy"></div><div><img src="fx/cherepanov.jpg" alt="Nikolaj Cherepanov" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Jan</small><a href="#fighter-jan-yusufi">Yusufi</a></span><span></span><span class="an r"><small>Nikolaj</small>Cherepanov</span></div><div class="slot">Main Event · Bareknuckle-Titelkampf bis 75 kg</div></div>
+        <div class="mu go up"><div class="pics"><div><img src="fx/kulaev.jpg" alt="Ikhvan Kulaev" loading="lazy"></div><div><img src="fx/tyson.jpg" alt="Hasan Tyson" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Ikhvan</small>Kulaev</span><span></span><span class="an r"><small>Hasan</small>Tyson</span></div><div class="slot">Rückkampf</div></div>
+        <div class="mu go up"><div class="pics"><div><img src="fx/bayat.jpg" alt="Hussain Bayat" loading="lazy"></div><div><img src="fx/saget.jpg" alt="Théo Saget" loading="lazy"></div><span class="vs">VS</span></div><div class="names"><span class="an"><small>Hussain</small>Bayat</span><span></span><span class="an r"><small>Théo</small>Saget</span></div><div class="slot">Fight</div></div>
+        <div class="mu" style="justify-content:center;padding:28px 22px;gap:12px"><span class="an" style="font-size:34px;line-height:1">Weitere <span class="y">Kämpfe</span></span><p style="color:var(--soft);font-size:15px">Die komplette Fight Card mit allen Bare-Knuckle- und Boxkämpfen folgt.</p><span class="ph" style="align-self:flex-start">Platzhalter</span></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <h2 class="an">Das erste <span class="y">Städteturnier</span></h2>
+      <p class="lead" style="margin-bottom:28px;max-width:60ch">Statt Ländern treten diesmal vier deutsche Städte gegeneinander an. Welche Stadt setzt sich durch und holt den Sieg?</p>
+      <div class="cities">
+        <div class="city"><span><small>Heimteam</small><b>Dresden</b></span></div>
+        <div class="city"><span><small>Team</small><b>Berlin</b></span></div>
+        <div class="city"><span><small>Team</small><b>Frankfurt</b></span></div>
+        <div class="city"><span><small>Team</small><b>Düsseldorf</b></span></div>
+      </div>
+    </div>
+
+    <div class="pblock inf">
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">Infos zum <span class="y">Abend</span></h2>
+        <dl class="dd">
+          <div><dt>Datum</dt><dd>Samstag, 28.11.2026</dd></div>
+          <div><dt>Beginn</dt><dd>18:00 Uhr</dd></div>
+          <div><dt>Einlass</dt><dd><span class="ph">Uhrzeit folgt</span></dd></div>
+          <div><dt>Ort</dt><dd>Dresdner Weihnachts-Circus<br>Washingtonstraße 2, 01139 Dresden</dd></div>
+          <div><dt>Alter</dt><dd>Ab 18 Jahren, Ausweis mitbringen</dd></div>
+          <div><dt>Livestream</dt><dd>YouTube, <a href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">RINGLIFE COMBAT</a></dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">So kommst du <span class="y">hin</span></h2>
+        <div class="qlinks">
+          <div class="ql" style="cursor:default"><div><b>Bus &amp; Bahn</b><span>Haltestelle Washingtonstraße: Straßenbahn 9 und 13, Bus 64 und 72</span></div></div>
+          <div class="ql" style="cursor:default"><div><b>Mit dem Auto</b><span>A4, Abfahrt Dresden-Neustadt, dann der P+R-Beschilderung bis zum Baumarkt Hornbach folgen</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pblock nextf"><div><div class="an">Tickets für RCS 9</div><p>Ticketarten und Preise findest du im offiziellen Ticketshop.</p></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Zum Ticketshop</a></div>
+  </div>
+</section>
+
+<!-- Unterseite: Fighter -->
+<section class="sec page" id="fighter" aria-labelledby="pf-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Fighter</div>
+      <h1 class="an" id="pf-h"><span style="display:block">Wer in den</span><span class="y" style="display:block">Ring steigt.</span></h1>
+      <p class="lead" style="max-width:60ch">Die Fighter von RCS 9. Weitere Profile folgen nach und nach.</p>
+    </div>
+    <div class="fgrid">
+      <a class="fcard" href="#fighter-jan-yusufi"><div class="ph2"><img src="fx/yusufi.jpg" alt="Jan Yusufi" loading="lazy"></div><div class="bd"><small>RCS 9 · Titelkampf bis 75 kg</small><span class="an">Jan Yusufi</span><p>vs. Nikolaj Cherepanov</p><span class="more">Profil ansehen →</span></div></a>
+      <div class="fcard"><div class="ph2"><img src="fx/cherepanov.jpg" alt="Nikolaj Cherepanov" loading="lazy"></div><div class="bd"><small>RCS 9 · Titelkampf bis 75 kg</small><span class="an">Nikolaj Cherepanov</span><p>vs. Jan Yusufi</p><span class="more off">Profil folgt</span></div></div>
+      <div class="fcard"><div class="ph2"><img src="fx/kulaev.jpg" alt="Ikhvan Kulaev" loading="lazy"></div><div class="bd"><small>RCS 9 · Rückkampf</small><span class="an">Ikhvan Kulaev</span><p>vs. Hasan Tyson</p><span class="more off">Profil folgt</span></div></div>
+      <div class="fcard"><div class="ph2"><img src="fx/tyson.jpg" alt="Hasan Tyson" loading="lazy"></div><div class="bd"><small>RCS 9 · Rückkampf</small><span class="an">Hasan Tyson</span><p>vs. Ikhvan Kulaev</p><span class="more off">Profil folgt</span></div></div>
+      <div class="fcard"><div class="ph2"><img src="fx/bayat.jpg" alt="Hussain Bayat" loading="lazy"></div><div class="bd"><small>RCS 9</small><span class="an">Hussain Bayat</span><p>vs. Théo Saget</p><span class="more off">Profil folgt</span></div></div>
+      <div class="fcard"><div class="ph2"><img src="fx/saget.jpg" alt="Théo Saget" loading="lazy"></div><div class="bd"><small>RCS 9</small><span class="an">Théo Saget</span><p>vs. Hussain Bayat</p><span class="more off">Profil folgt</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Fighter-Profil (Beispiel) -->
+<section class="sec page" id="fighter-jan-yusufi" aria-labelledby="py-h">
+  <div class="w">
+    <a class="back" href="#fighter">← Alle Fighter</a>
+    <div class="prof">
+      <div class="pic"><div class="sk"><img src="fx/yusufi.jpg" alt="Jan Yusufi"></div></div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div class="kick">Fighter-Profil <span class="ph">Beispielseite</span></div>
+        <h1 class="an" id="py-h"><span style="display:block">Jan</span><span class="y" style="display:block">Yusufi</span></h1>
+        <div class="tags"><span>Bare Knuckle</span><span>Dresden</span><span>bis 75 kg</span><span class="ph">Kampfname folgt</span></div>
+        <div class="pstats">
+          <div class="oct ko"><div class="in2"><small>Bilanz</small><span class="an">0-0-0</span><em>Platzhalter</em></div></div>
+          <div class="oct"><div class="in2"><small>Gewicht</small><span class="an">75 kg</span><em>Titelkampf RCS 9</em></div></div>
+          <div class="oct"><div class="in2"><small>Herkunft</small><span class="an">Dresden</span><em>Lokalmatador</em></div></div>
+          <div class="oct"><div class="in2"><small>Gym</small><span class="an">–</span><em>Platzhalter</em></div></div>
+          <div class="oct"><div class="in2"><small>Größe</small><span class="an">–</span><em>Platzhalter</em></div></div>
+          <div class="oct"><div class="in2"><small>Alter</small><span class="an">–</span><em>Platzhalter</em></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="pblock nextf"><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächster Kampf · 28.11.2026 · Dresden</small><div class="an">RCS 9: Titelkampf vs. Nikolaj Cherepanov</div></div><a class="btn k" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a></div>
+    <div class="pblock inf">
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:24px">Seine <span class="y">Geschichte</span></h2>
+        <div style="display:flex;flex-direction:column;gap:16px;color:var(--text);font-size:17px;max-width:60ch">
+          <p>Bei RCS 9 kämpft Jan Yusufi vor eigenem Publikum. Der Dresdner steht im Main Event und kämpft gegen Nikolaj Cherepanov um den Titel bis 75 kg.</p>
+          <p><span class="ph">Platzhalter</span> Wie er zum Kampfsport kam, wo und mit wem er trainiert, seine wichtigsten Kämpfe und was ihn antreibt. Drei bis fünf Sätze reichen.</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:24px">Kämpfe bei <span class="y">RCS</span></h2>
+        <div class="tbl"><table>
+          <thead><tr><th>Datum</th><th>Event</th><th>Gegner</th><th>Ergebnis</th></tr></thead>
+          <tbody>
+            <tr><td>28.11.2026</td><td class="an">RCS 9</td><td>Nikolaj Cherepanov</td><td style="color:var(--y);font-weight:700">Anstehend</td></tr>
+            <tr><td><span class="ph">Datum</span></td><td class="an">RCS –</td><td><span class="ph">Gegner</span></td><td>Sieg · K.o. Runde 1</td></tr>
+          </tbody>
+        </table></div>
+        <div class="btns" style="margin-top:24px"><a class="btn g" href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">Kämpfe auf YouTube</a><a class="btn g ico" href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener" aria-label="Instagram von Jan Yusufi (Link folgt)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Regeln -->
+<section class="sec page" id="regeln" aria-labelledby="pr-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Regeln</div>
+      <h1 class="an" id="pr-h"><span style="display:block">So wird</span><span class="y" style="display:block">gekämpft.</span></h1>
+      <p class="lead" style="max-width:60ch">Kurze Runden, keine Handschuhe, kein Taktieren. Hier erfährst du, wie ein Kampf bei der RINGLIFE Combat Series abläuft.</p>
+    </div>
+    <div class="pblock" style="margin-top:0">
+      <h2 class="an">Bare <span class="y">Knuckle</span></h2>
+      <div class="rounds">
+        <div class="rd"><small>Runde 1</small><b>2:00</b><span>Minuten</span></div>
+        <div class="rd"><small>Runde 2</small><b>2:00</b><span>Minuten</span></div>
+        <div class="rd"><small>Runde 3</small><b>2:00</b><span>Minuten</span></div>
+        <div class="rd x"><small>Runde 4</small><b>2:00</b><span>Nur bei Unentschieden</span></div>
+      </div>
+      <p class="lead" style="margin-top:24px;max-width:62ch">Ein Bare-Knuckle-Kampf geht über drei Runden à zwei Minuten. Steht es nach drei Runden unentschieden, entscheidet eine vierte Runde.</p>
+    </div>
+    <div class="pblock">
+      <h2 class="an">Das <span class="y">Wichtigste</span></h2>
+      <div class="cols3">
+        <div class="box"><h3 class="an">Ohne Handschuhe</h3><p>Gekämpft wird mit bandagierten Fäusten statt mit Boxhandschuhen.</p></div>
+        <div class="box"><h3 class="an">Im Sechseck-Ring</h3><p>Der RCS-Ring hat sechs Seiten. Die Kämpfer stehen sich auf engem Raum gegenüber.</p></div>
+        <div class="box"><h3 class="an">Erlaubt &amp; verboten</h3><p><span class="ph">Platzhalter</span> Erlaubte Techniken, Fouls und Verwarnungen.</p></div>
+      </div>
+    </div>
+    <div class="pblock">
+      <h2 class="an">Gewichts<span class="y">klassen</span></h2>
+      <p class="lead" style="margin-bottom:28px;max-width:62ch">Bei der RINGLIFE Combat Series gibt es acht Gewichtsklassen. Die Zahl ist jeweils das Höchstgewicht der Klasse.</p>
+      <div class="cities wks"><div class="city wk"><span><small>bis</small><b>61 kg</b></span></div><div class="city wk"><span><small>bis</small><b>65 kg</b></span></div><div class="city wk"><span><small>bis</small><b>69 kg</b></span></div><div class="city wk on"><span><small>Titel RCS 9</small><b>75 kg</b><em>bis 75 kg</em></span></div><div class="city wk"><span><small>bis</small><b>81 kg</b></span></div><div class="city wk"><span><small>bis</small><b>86 kg</b></span></div><div class="city wk"><span><small>bis</small><b>93 kg</b></span></div><div class="city wk"><span><small>über</small><b>93 kg</b><em>offen</em></span></div></div>
+    </div>
+    <div class="pblock">
+      <h2 class="an"><span class="y">Boxen</span> bei RCS</h2>
+      <p class="lead" style="max-width:62ch"><span class="ph">Platzhalter</span> Rundenzahl, Rundenlänge und Handschuhgröße bei den Boxkämpfen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Tickets & FAQ -->
+<section class="sec page" id="tickets" aria-labelledby="pt-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Tickets &amp; Infos</div>
+      <h1 class="an" id="pt-h"><span style="display:block">Rein in die</span><span class="y" style="display:block">Halle.</span></h1>
+      <p class="lead" style="max-width:60ch">Wo du Tickets bekommst, was du am Eventtag brauchst und Antworten auf die häufigsten Fragen.</p>
+    </div>
+    <div class="cols3">
+      <div class="box"><h3 class="an">Ticketshop</h3><p>Tickets gibt es offiziell auf ringlife-tickets.de. Der Verkauf läuft über MyShow.</p><a class="btn p" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener" style="align-self:flex-start">Tickets sichern</a></div>
+      <div class="box"><h3 class="an">Ticketarten</h3><p><span class="ph">Platzhalter</span> Kategorien und Preise für RCS 9 eintragen, zum Beispiel Stehplatz, Sitzplatz und Ringside.</p></div>
+      <div class="box"><h3 class="an">Ticket-Service</h3><p>Fragen zu deiner Bestellung: rcs@myshow.de oder 0221 650680, Montag bis Freitag von 10 bis 16 Uhr.</p></div>
+    </div>
+    <div class="pblock inf">
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">Am <span class="y">Eventtag</span></h2>
+        <dl class="dd">
+          <div><dt>Beginn</dt><dd>18:00 Uhr · Einlass <span class="ph">folgt</span></dd></div>
+          <div><dt>Ort</dt><dd>Dresdner Weihnachts-Circus, Washingtonstraße 2, 01139 Dresden</dd></div>
+          <div><dt>Bus &amp; Bahn</dt><dd>Haltestelle Washingtonstraße: Straßenbahn 9 und 13, Bus 64 und 72</dd></div>
+          <div><dt>Auto</dt><dd>A4, Abfahrt Dresden-Neustadt, P+R-Beschilderung bis zum Baumarkt Hornbach</dd></div>
+          <div><dt>Alter</dt><dd>Ab 18 Jahren, Ausweis mitbringen</dd></div>
+          <div><dt>Respekt</dt><dd>Vor den Kämpfern, den Ringrichtern und den anderen Fans. Es gilt die Hausordnung der Halle.</dd></div>
+        </dl>
+      </div>
+      <div>
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px">Häufige <span class="y">Fragen</span></h2>
+        <div class="faq go up" style="--d:.1s">
+        <details open><summary>Ab welchem Alter darf ich rein?<i>+</i></summary><p>Ab 18 Jahren. Bring einen gültigen Ausweis mit, am Einlass wird kontrolliert.</p></details>
+        <details><summary>Wo bekomme ich Tickets?<i>+</i></summary><p>Im offiziellen Ticketshop auf ringlife-tickets.de. Newsletter-Mitglieder bekommen neue Events 48 Stunden früher.</p></details>
+        <details><summary>Kann ich die Kämpfe online sehen?<i>+</i></summary><p>Ja. Kämpfe, Face-offs und Highlights laufen auf YouTube bei RINGLIFE COMBAT, Fight Cards und Reels auf Instagram bei @ringlife_combat.</p></details>
+        <details><summary>Was ist Bare Knuckle?<i>+</i></summary><p>Boxen ohne Handschuhe, nur mit Bandagen. Kurze Runden, wenig Taktik und viele K.o.s.</p></details>
+        <details><summary>Was ist der Unterschied zwischen RCS und RCU?<i>+</i></summary><p>RCS sind die nummerierten Main Events mit großen Titelkämpfen und vielen Bare-Knuckle-Kämpfen. RCU steht für Underground: kleinere Events für Newcomer, immer mit einem Länderturnier.</p></details>
+        <details><summary>Wie werde ich selbst Fighter?<i>+</i></summary><p>Bewirb dich auf der Seite „Fighter werden“ oder schreib per DM an @rcs_matchmaker auf Instagram.</p></details>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Fighter werden -->
+<section class="sec page" id="fighter-werden" aria-labelledby="pw-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Fighter werden</div>
+      <h1 class="an" id="pw-h"><span style="display:block">Du willst</span><span class="y" style="display:block">in den Ring?</span></h1>
+      <p class="lead" style="max-width:60ch">Bewirb dich direkt beim Matchmaking. Erfahrung hilft, Haltung entscheidet.</p>
+    </div>
+    <div class="cols3" style="margin-bottom:40px">
+      <div class="box"><h3 class="an">1 · Bewerben</h3><p>Mit Bilanz, Gewicht und einem Video von dir im Sparring oder Kampf.</p></div>
+      <div class="box"><h3 class="an">2 · Underground</h3><p>Newcomer starten bei den Underground-Events, nah am Ring und mit Länderturnier.</p></div>
+      <div class="box"><h3 class="an">3 · Main Events</h3><p>Wer überzeugt, kämpft sich zu den Main Events und um den Titel hoch.</p></div>
+    </div>
+    <div class="fone">
+      <div class="fbox go up">
+        <div class="an h">Fighter werden</div>
+        <p class="sub">Bewirb dich beim Matchmaking. Newcomer starten bei den Underground-Events, die Besten kämpfen sich zu den Main Events hoch. Nur ab 18. Lieber per DM: <b style="color:#fff">@rcs_matchmaker</b></p>
+        <form id="f-fighter" name="fighter-bewerbung" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="fighter-bewerbung">
+          <p hidden><label>Nicht ausfüllen <input name="bot-field"></label></p>
+          <fieldset style="border:0;margin:0;padding:0"><legend class="lbl">Disziplin</legend>
+            <div class="chips">
+              <label><input type="radio" name="disziplin" value="Bare Knuckle" checked><span>Bare Knuckle</span></label>
+              <label><input type="radio" name="disziplin" value="Boxen"><span>Boxen</span></label>
+              <label><input type="radio" name="disziplin" value="K1"><span>K1</span></label>
+            </div>
+          </fieldset>
+          <div class="two">
+            <label class="fl lbl" for="t-name">Name<input type="text" id="t-name" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></label>
+            <label class="fl lbl" for="t-alter">Alter<input type="number" id="t-alter" name="alter" min="18" max="60" placeholder="18" required></label>
+          </div>
+          <div class="two">
+            <label class="fl lbl" for="t-mail">E-Mail<input type="email" id="t-mail" name="email" autocomplete="email" placeholder="deine@mail.de" required></label>
+            <label class="fl lbl" for="t-tel">Telefon<input type="tel" id="t-tel" name="telefon" autocomplete="tel" placeholder="optional"></label>
+          </div>
+          <div class="two">
+            <label class="fl lbl" for="t-gew">Kampfgewicht<input type="text" id="t-gew" name="kampfgewicht" placeholder="z. B. 77 kg"></label>
+            <label class="fl lbl" for="t-bil">Bilanz<input type="text" id="t-bil" name="bilanz" placeholder="Siege-Niederlagen-Remis"></label>
+          </div>
+          <label class="fl lbl" for="t-vid">Video oder Instagram<input type="url" id="t-vid" name="video" placeholder="https://"></label>
+          <button type="submit">Bewerbung senden</button>
+          <p class="done" id="ok-fighter" hidden>Bewerbung ist angekommen. Das Matchmaking meldet sich bei dir.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Impressum -->
+<section class="sec page" id="impressum" aria-labelledby="pi-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead"><div class="kick">Rechtliches</div><h1 class="an" id="pi-h">Impressum</h1></div>
+    <div class="legaltxt">
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>RINGLIFE Entertainment GmbH<br>Uerdinger Straße 77<br>40668 Meerbusch</p>
+      <p>Vertreten durch die Geschäftsführung: <span class="ph">Name eintragen</span></p>
+      <p>Registergericht: <span class="ph">Amtsgericht</span><br>Registernummer: <span class="ph">HRB</span></p>
+      <p>Umsatzsteuer-Identifikationsnummer: <span class="ph">USt-IdNr.</span></p>
+      <h2>Kontakt</h2>
+      <p>E-Mail: <span class="ph">E-Mail eintragen</span><br>Telefon: <span class="ph">optional</span></p>
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p><span class="ph">Name und Anschrift</span></p>
+      <h2>Ticketverkauf</h2>
+      <p>Der Ticketverkauf erfolgt über MyShow, Banijay Media Germany GmbH, Schanzenstraße 22, 51063 Köln. Es gelten deren <a href="https://rcs.myshow.de/agb" target="_blank" rel="noopener" style="color:var(--y)">Allgemeine Geschäftsbedingungen</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Unterseite: Datenschutz -->
+<section class="sec page" id="datenschutz" aria-labelledby="pd-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead"><div class="kick">Rechtliches</div><h1 class="an" id="pd-h">Datenschutz</h1></div>
+    <div class="legaltxt">
+      <p><span class="ph">Platzhalter</span> Hier kommt die Datenschutzerklärung der RINGLIFE Entertainment GmbH hinein. Sie sollte von einer Fachperson oder mit einem geprüften Generator erstellt werden.</p>
+      <p>Sie muss mindestens abdecken: den Verantwortlichen, das Hosting der Website, das Bewerbungsformular für Fighter, die Newsletter-Anmeldung, die Links zu YouTube und Instagram, eingebundene Schriften sowie die Rechte der Nutzer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 Tickets & Infos -->
+<section class="sec" id="infos" aria-labelledby="in-h" style="background:#0c0c0c">
+  <div class="w">
+    <div class="top2">
+      <div style="display:flex;flex-direction:column;gap:22px"><div class="kick go up">RCS 9 · Tickets &amp; Infos</div><h2 class="an h2 go up" id="in-h" style="--d:.1s"><span style="display:block">Alles für</span><span class="y" style="display:block">deine Fight Night.</span></h2></div>
+      <p class="lead go up" style="--d:.2s">Wann, wo und was du wissen musst, bevor du in den Weihnachts-Circus kommst.</p>
+    </div>
+    <div class="inf">
+      <div class="go up">
+        <dl class="dd">
+          <div><dt>Datum</dt><dd>Samstag, 28.11.2026</dd></div>
+          <div><dt>Beginn</dt><dd>18:00 Uhr · Einlass <span class="ph">folgt</span></dd></div>
+          <div><dt>Ort</dt><dd>Dresdner Weihnachts-Circus, Washingtonstraße 2, 01139 Dresden</dd></div>
+          <div><dt>Livestream</dt><dd>Live auf YouTube bei <a href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">RINGLIFE COMBAT</a></dd></div>
+          <div><dt>Alter</dt><dd>Eintritt ab 18 Jahren, bitte Ausweis mitbringen</dd></div>
+        </dl>
+        <div class="btns" style="margin-top:28px"><a class="btn p" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern</a></div>
+      </div>
+      <div class="qlinks go up" style="--d:.1s">
+        <a class="ql" href="#rcs-9"><div><b>Event-Seite RCS 9</b><span>Fight Card, Städteturnier, Anreise</span></div><i>→</i></a>
+        <a class="ql" href="#tickets"><div><b>Tickets &amp; FAQ</b><span>Ticketshop, Einlass, Anreise, häufige Fragen</span></div><i>→</i></a>
+        <a class="ql" href="#regeln"><div><b>Regeln</b><span>So läuft ein Bare-Knuckle-Kampf</span></div><i>→</i></a>
+        <a class="ql" href="#fighter"><div><b>Fighter</b><span>Wer bei RCS 9 in den Ring steigt</span></div><i>→</i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 Watch / Community -->
+<section class="sec com" id="watch" aria-labelledby="wa-h" style="background:var(--bg)">
+  <div class="w">
+    <div class="grid">
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div class="kick go up">Live und auf Abruf</div>
+        <h2 class="an h2 go up" id="wa-h" style="--d:.1s"><span style="display:block">Jede Show</span><span class="y" style="display:block">live auf YouTube.</span></h2>
+        <p class="lead go up" style="--d:.2s">Alle Kämpfe, Face-offs und Event-Vlogs auf RINGLIFE COMBAT. Reels, Storys und Fight Cards auf @ringlife_combat.</p>
+        <div class="soc go up" style="--d:.3s">
+          <a class="sc" href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.8 15.1V8.9L15.6 12z"/></svg></i><div><b>YouTube</b><span>Kämpfe, Face-offs und Event-Vlogs</span></div></a>
+          <a class="sc" href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></i><div><b>Instagram</b><span>Fight Cards, Reels und Storys</span></div></a>
+        </div>
+      </div>
+      <a class="igc go up" style="--d:.2s" href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener" aria-label="Instagram-Profil der RINGLIFE Combat Series öffnen">
+        <div class="rw"><div class="av"><img src="rcs/rcs-stage.webp" alt="" style="object-position:55% 25%"></div><div class="st"><div><b>Fight</b><span>Cards</span></div><div><b class="y">Face</b><span>offs</span></div><div><b>Highlights</b><span>&amp; Reels</span></div></div></div>
+        <div><div style="font-size:15px;font-weight:800">@ringlife_combat</div><div style="font-size:13px;color:var(--mute);margin-top:2px">Bare Knuckle &amp; Boxen · Fight for your way</div></div>
+        <div class="gr">
+          <div><img src="rcs/rcs-bareknuckle.webp" alt="" loading="lazy"></div><div><img src="rcs/rcs-peaky.webp" alt="" loading="lazy"></div><div><img src="rcs/rcs-winner.webp" alt="" loading="lazy"></div>
+          <div><img src="rcs/rcs-beach.webp" alt="" loading="lazy"></div><div><img src="rcs/rcs-flames.webp" alt="" loading="lazy"></div><div><img src="rcs/rcs-interview.webp" alt="" loading="lazy"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Fighter werden: Teaser -->
+<section class="join" aria-labelledby="mm-h">
+  <img src="rcs/rcs-winner.webp" alt="" loading="lazy">
+  <div class="w">
+    <div class="kick go up">Fighter werden</div>
+    <h2 class="an h2 go up" id="mm-h" style="--d:.1s"><span style="display:block">Du willst</span><span class="y" style="display:block">in den Ring?</span></h2>
+    <p class="lead go up" style="--d:.2s;max-width:52ch">Newcomer starten bei den Underground-Events, die Besten kämpfen sich zu den Main Events hoch. Bewirb dich direkt beim Matchmaking.</p>
+    <div class="btns go up" style="--d:.3s"><a class="btn p" href="#fighter-werden">Jetzt bewerben</a><a class="btn g" href="#regeln">Regeln ansehen</a></div>
+  </div>
+</section>
+
+<!-- 9 Shop + Newsletter -->
+<section class="sec" aria-label="Shop und Newsletter">
+  <div class="w duo">
+    <div class="shop" id="shop">
+      <img src="walkin.jpg" alt="" loading="lazy">
+      <i class="wm" aria-hidden="true"></i>
+      <h3 class="an" style="font-size:clamp(38px,4vw,56px);line-height:.92">RINGLIFE <span class="y">Fightwear</span></h3>
+      <p style="max-width:44ch;color:var(--text)">Handschuhe, Shorts und Streetwear. Das Lebensgefühl von RCS außerhalb des Rings.</p>
+      <a class="btn p" href="#shop" style="align-self:flex-start">Zum Shop</a>
+    </div>
+    <div class="news" id="newsletter">
+      <div class="kick" style="color:#000">Newsletter</div>
+      <h3 class="an">Tickets vor allen anderen.</h3>
+      <p>Jeden Sonntag die Fights der Woche. Dazu 48 Stunden Vorverkauf, bevor Tickets öffentlich sind.</p>
+      <form id="f-news" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="newsletter">
+        <p hidden><label>Nicht ausfüllen <input name="bot-field"></label></p>
+        <input id="n-mail" name="email" type="email" autocomplete="email" required placeholder="deine@mail.de" aria-label="E-Mail-Adresse">
+        <button class="btn k" type="submit">Eintragen</button>
+        <p class="done" id="ok-news" hidden>Du bist drin.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 10 Schlussbild -->
+<section class="bro" aria-label="Tickets für RCS 9">
+  <img src="rcs/rcs-flames.webp" alt="Kämpfer der RINGLIFE Combat Series vor Flammen am roten Teppich" loading="lazy">
+  <div class="sh" aria-hidden="true"></div>
+  <div class="w">
+    <p class="an big go up"><span style="display:block">Wir sehen uns</span><span style="display:block">am 28.11.</span><span class="y" style="display:block">in Dresden.</span></p>
+    <a class="btn p go up" style="--d:.2s" href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="w">
+    <div class="first">
+      <i class="wm" aria-hidden="true"></i>
+      <p style="margin-top:18px;font-size:15px;max-width:34ch;color:var(--mute)">Deutschlands größte Bare-Knuckle-Organisation. Für alle, die ihren Weg gehen.</p>
+    </div>
+    <div><h4>Events</h4><ul><li><a href="#rcs-9">RCS 9 Combat Circus</a></li><li><a href="#fighter">Fighter</a></li><li><a href="#regeln">Regeln</a></li><li><a href="#alle-events">Alle Events</a></li><li><a href="#formate">Formate</a></li><li><a href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets</a></li></ul></div>
+    <div><h4>Mitmachen</h4><ul><li><a href="#fighter-werden">Fighter werden</a></li><li><a href="#tickets">Tickets &amp; FAQ</a></li><li><a href="https://spotlight-talents.com/talents/ringlife-combat-series" target="_blank" rel="noopener">Partner werden</a></li><li><a href="#newsletter">Newsletter</a></li></ul></div>
+    <div><h4>Folgen</h4><ul><li><a href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">YouTube</a></li><li><a href="#shop">RINGLIFE Fightwear</a></li></ul></div>
+    <div class="legal"><span>© 2026 RINGLIFE Entertainment GmbH</span><span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="https://rcs.myshow.de/agb" target="_blank" rel="noopener">Ticket-AGB</a> · Eintritt ab 18</span><span>Fight for your way.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Zeitstrahl aus Daten (Zahlen wie auf spotlight-talents.com)
+  var F=[
+    ['08.06.2024','RCS 1','1,8 Mio.','1,0 Mio.','786K','Der Start','Bare Knuckle trifft Boxen. Im Video: Dustin „Taeddy“ Rabiega gegen Fifen „Heavy Heart“ Arami.','bareknuckle','sdnCkN9TAtI','182K'],
+    ['21.09.2024','RCS 2','1,1 Mio.','531K','567K','Wegele vs. Arami','Andre „Cyborg“ Wegele gegen Fifen „Heavy Heart“ Arami.','clash','ii917vPvetM','140K'],
+    ['07.12.2024','RCS 3','1,86 Mio.','638K','1,2 Mio.','Schock des Abends','Tom „Hype“ Neubert gegen Hunor, der Kampf, über den alle reden.','ko','VSukQM8bHeo','125K'],
+    ['Januar 2025','RCU 1','1,88 Mio.','456K','1,4 Mio.','Underground: Bare Knuckle pur','Das erste Underground-Event. Im Video: Matheus Minkner gegen Emran Aliju.','peaky','SuPS24ukdL0','105K'],
+    ['März 2025','RCU 2','3,99 Mio.','2,0 Mio.','1,9 Mio.','4 gegen 4: Albanien vs. Russland','Das Halbfinale im Team-Turnier der Nationen.','teams','-bCLbJJC_k8','1,03 Mio.'],
+    ['22.03.2025','RCS 4','5,01 Mio.','1,7 Mio.','3,3 Mio.','Edmon vs. Kenan Penjic','Ringlife selbst im Ring, der meistgesehene Kampf des Abends.','rcs4','b9_wb4LFMbQ','244K'],
+    ['Mai 2025','RCU 3','5,79 Mio.','2,0 Mio.','3,8 Mio.','Marokko vs. Albanien','Last Man Standing im 4-gegen-4-Turnier.','gang','BB5-CFr-5JU','1,28 Mio.'],
+    ['05.07.2025','RCS 5','4,31 Mio.','194K','4,1 Mio.','10.000-€-Turnier','Halbfinale und Finale um 10.000 Euro Preisgeld.','winner','gNLZwO1p7lI','51K'],
+    ['30.08.2025','RCU 4','6,37 Mio.','577K','5,8 Mio.','Marokko vs. Armenien','4 gegen 4 im Underground-Format in Leipzig.','peaky2','KxtkP5DDpYI','260K'],
+    ['29.11.2025','RCS 6','12,05 Mio.','668K','11,4 Mio.','Deutschland vs. Türkei','Team-Fight im 4-gegen-4-Turnier.','ringhall','Hyf1GLlll5k','153K'],
+    ['25.04.2026','RCS 7','11,39 Mio.','674K','10,7 Mio.','Last Man Standing','Finale Deutschland gegen Russland im TV-Studio Köln-Mülheim.','arena','9jYPWW66twU','175K'],
+    ['04.07.2026','RCS 8','4,48 Mio.','270K','4,2 Mio.','Russland vs. Deutschland','Das Team-Finale Russland gegen Deutschland.','flames','7ixPii3ApVk','72K']
+  ];
+  function img(k){return 'rcs/rcs-'+k+'.webp'}
+  var rail=document.getElementById('rail'),html='';
+  F.forEach(function(f,i){
+    var info='<div class="info go up"><span class="val an">'+f[1]+'</span><small>'+f[0]+'</small>'+
+      '<h3 class="an">'+f[5]+'</h3><p>'+f[6]+'</p></div>';
+    var vid='<a class="vid go wd" href="https://www.youtube.com/watch?v='+f[8]+'" target="_blank" rel="noopener" aria-label="Top-Kampf von '+f[1]+' auf YouTube ansehen"><img src="'+img(f[7])+'" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" fill="#000" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span><span class="lbl">Kampf des Abends ansehen</span></a>';
+    var node='<div class="node" aria-hidden="true"><i></i></div>';
+    html+='<div class="row'+(i%2?' r':'')+'">'+(i%2?info+node+vid:vid+node+info)+'</div>';
+  });
+  html+='<div class="tail go up"><div><small>Nächstes Event · 28.11.2026</small><span class="an">RCS 9 <span class="y">Combat Circus</span></span></div><a class="btn p" href="#rcs-9">Zur Event-Seite</a></div>';
+  rail.insertAdjacentHTML('beforeend',html);
+  var t='';F.slice(-3).reverse().forEach(function(f){
+    t+='<article class="tc go up"><a class="vid" href="https://www.youtube.com/watch?v='+f[8]+'" target="_blank" rel="noopener" aria-label="Kampf des Abends von '+f[1]+' auf YouTube ansehen"><img src="'+img(f[7])+'" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" fill="#000" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></span></a><small>'+f[0]+' · '+f[1]+'</small><h3 class="an">'+f[5]+'</h3><p>'+f[6]+'</p></article>';
+  });
+  document.getElementById('teas').innerHTML=t;
+
+  // Unterseiten über Anker (#rcs-9, #fighter, #regeln …)
+  var base=document.title;
+  function route(){
+    var h=decodeURIComponent(location.hash.slice(1));
+    var pg=h?document.getElementById(h):null;
+    if(pg&&!pg.classList.contains('page'))pg=null;
+    var was=document.body.classList.contains('on-page');
+    document.querySelectorAll('main>.page.cur').forEach(function(e){e.classList.remove('cur')});
+    if(pg){pg.classList.add('cur');document.body.classList.add('on-page');window.scrollTo(0,0);var t=pg.querySelector('h1');document.title=(t?t.innerText.replace(/\s+/g,' ').trim()+' · ':'')+base}
+    else{document.body.classList.remove('on-page');document.title=base;
+      var el=h?document.getElementById(h):null;
+      if(el)el.scrollIntoView();else if(was)window.scrollTo(0,0)}
+  }
+  window.addEventListener('hashchange',route);route();
+
+  // Einblenden beim Scrollen: Ruhezustand ist sichtbar, die Animation startet erst beim Eintreten
+  var items=document.querySelectorAll('.go');
+  if('IntersectionObserver' in window){
+    items.forEach(function(e){e.classList.remove('go');e.dataset.go='1'});
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('go');io.unobserve(x.target)}})},{threshold:0});
+    items.forEach(function(e){io.observe(e)});
+  }
+
+  // Countdown bis RCS 9 (Beginn 18:00 Uhr laut Ticketshop)
+  var target=new Date('2026-11-28T18:00:00+01:00').getTime();
+  function p(n){return String(n).padStart(2,'0')}
+  function set(c,v){document.querySelectorAll('.cd-'+c).forEach(function(e){e.textContent=v})}
+  function tick(){var t=Math.max(0,target-Date.now());set('d',Math.floor(t/864e5));set('h',p(Math.floor(t/36e5)%24));set('m',p(Math.floor(t/6e4)%60));set('s',p(Math.floor(t/1e3)%60))}
+  tick();setInterval(tick,1000);
+
+  // Menü
+  var hdr=document.getElementById('hdr'),b=document.getElementById('burger');
+  b.addEventListener('click',function(){var o=hdr.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'✕':'☰'});
+  document.getElementById('menu').addEventListener('click',function(e){if(e.target.closest('a')){hdr.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='☰'}});
+
+  // Formulare: Versand über Netlify Forms
+  [['f-fighter','ok-fighter'],['f-news','ok-news']].forEach(function(x){
+    var f=document.getElementById(x[0]);
+    f.addEventListener('submit',function(e){e.preventDefault();
+      var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(i){return !i.value.trim()||!i.checkValidity()});
+      if(bad.length){bad[0].focus();return}
+      var ok=document.getElementById(x[1]),btn=f.querySelector('button[type=submit]');
+      btn.disabled=true;
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+        .then(function(r){if(!r.ok)throw 0;ok.textContent=ok.dataset.ok||ok.textContent;ok.dataset.ok=ok.textContent;ok.hidden=false;f.reset()})
+        .catch(function(){ok.dataset.ok=ok.dataset.ok||ok.textContent;ok.textContent='Das hat nicht geklappt. Bitte versuch es gleich nochmal.';ok.hidden=false})
+        .then(function(){btn.disabled=false})});
+  });
+})();
+</script>
