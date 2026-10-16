@@ -12,7 +12,7 @@ Die Einstellungen stehen auch in `netlify.toml`.
 
 ## Formulare
 
-Die Fighter-Bewerbung (`fighter-bewerbung`) und der Newsletter (`newsletter`) laufen über **Netlify Forms**.
+Die Fighter-Bewerbung (`fighter-bewerbung`), die Sponsoren-Anfrage (`partner-anfrage`) und der Newsletter (`newsletter`) laufen über **Netlify Forms**.
 Nach dem ersten Deploy unter **Site configuration → Forms** die Formularerkennung aktivieren (falls nicht automatisch an) und den Deploy neu anstoßen.
 Benachrichtigungen per E-Mail: **Forms → Form notifications → Add notification → Email**.
 
@@ -32,6 +32,7 @@ Die Unterseiten laufen über Anker in derselben Datei:
 | Regeln | `/#regeln` |
 | Tickets & FAQ | `/#tickets` |
 | Fighter werden | `/#fighter-werden` |
+| Partner werden (Sponsoren) | `/#partner-werden` |
 | Impressum | `/#impressum` |
 | Datenschutz | `/#datenschutz` |
 
@@ -43,4 +44,5 @@ Gelb markierte Platzhalter (`class="ph"`) im Text:
 - Impressum: Geschäftsführung, Registergericht und HRB, USt-IdNr., Kontakt-E-Mail, Verantwortlicher nach § 18 MStV
 - Datenschutzerklärung (Pflicht, inkl. Netlify-Hosting, Netlify Forms, Google Fonts)
 - Fighter-Profile und Fotos, Boxregeln, erlaubte Techniken und Fouls
+- Partner-Seite: Zahlen (Stand Spotlight-Seite Okt. 2026) regelmäßig aktualisieren, „Letzter Sponsorenplatz frei“ prüfen
 - Allianz-Logo (aktuell Text), Link zum Fightwear-Shop

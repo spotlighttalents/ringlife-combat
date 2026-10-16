@@ -329,7 +329,7 @@ header.nav .w{display:flex;align-items:center;justify-content:space-between;gap:
 .lbl{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 .fl{display:flex;flex-direction:column;gap:8px}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.fbox input[type=text],.fbox input[type=email],.fbox input[type=number],.fbox input[type=url],.fbox textarea{width:100%;min-width:0;min-height:52px;padding:0 16px;background:#0c0c0c;border:1.5px solid #333;border-radius:0;color:#fff;font:16px var(--body)}
+.fbox input[type=text],.fbox input[type=email],.fbox input[type=number],.fbox input[type=url],.fbox input[type=tel],.fbox textarea{width:100%;min-width:0;min-height:52px;padding:0 16px;background:#0c0c0c;border:1.5px solid #333;border-radius:0;color:#fff;font:16px var(--body)}
 .fbox textarea{padding:14px 16px;resize:vertical;min-height:90px}
 .fbox input:focus,.fbox textarea:focus{border-color:var(--y);outline:none}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
@@ -403,7 +403,7 @@ body.on-page main>.page.cur{display:block}
 .phead{padding-top:clamp(40px,5vw,72px);margin-bottom:clamp(40px,5vw,64px);display:flex;flex-direction:column;gap:22px}
 .phead h1{font-size:clamp(64px,9vw,140px);line-height:1.1}
 .pblock{margin-top:clamp(56px,6vw,88px)}
-.pblock>h2{font-size:clamp(40px,4.6vw,64px);line-height:.92;margin-bottom:28px}
+.pblock>h2{font-size:clamp(40px,4.6vw,64px);line-height:1;margin-bottom:28px}
 .qlinks{display:flex;flex-direction:column;gap:10px}
 .ql{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:var(--panel);border-left:4px solid var(--line);transition:border-color .2s,background .2s}
 .ql:hover{border-left-color:var(--y);background:#181818}
@@ -423,6 +423,49 @@ body.on-page main>.page.cur{display:block}
 @media (max-width:760px){.cities{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .wks .city em{font-style:normal;font-size:11px;color:var(--soft)}
 .city.wk.on{background:var(--y)}.city.wk.on span{background:var(--y);color:#000}.city.wk.on small,.city.wk.on em{color:#000}
+/* Partner werden */
+.pw-num{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.pw-num .oct{max-width:none}
+.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.aud div{background:var(--panel);border-top:4px solid var(--y);padding:26px}
+.aud b{display:block;font-family:var(--an);font-weight:400;font-size:clamp(56px,6vw,84px);line-height:1;color:var(--y)}
+.aud h3{font-family:var(--an);font-weight:400;font-size:26px;text-transform:uppercase;margin:6px 0 8px}
+.aud p{font-size:15px;color:var(--soft)}
+.zgrp{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--y);margin:44px 0 18px;display:flex;align-items:center;gap:12px}
+.zgrp::before{content:"";width:34px;height:3px;background:var(--y)}
+.ringz{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px 48px;align-items:center}
+.ringpic2{position:relative}
+.ringpic2 img{width:100%;height:auto;display:block}
+.ringpic2 .hz{position:absolute;width:44px;aspect-ratio:1/.866;margin:-19px 0 0 -22px;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-family:var(--an);font-size:22px;box-shadow:0 0 0 6px rgba(160,240,60,.25)}
+.zl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.zl li{display:flex;gap:16px;align-items:flex-start;background:var(--panel);padding:18px 20px;border-left:4px solid var(--line)}
+.zl li b{flex:none;width:36px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-family:var(--an);font-weight:400;font-size:18px}
+.zl h3{font-family:var(--an);font-weight:400;font-size:24px;text-transform:uppercase;line-height:1.05}
+.zl p{font-size:14px;color:var(--soft);margin-top:4px}
+.ztiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.ztiles figure{margin:0;position:relative;height:300px;overflow:hidden;background:#000}
+.ztiles img{width:100%;height:100%;object-fit:cover}
+.ztiles img.ct{object-fit:contain}
+.ztiles figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9));font-family:var(--an);font-size:22px;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.ztiles figcaption i{font-style:normal;width:30px;aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y);color:#000;display:flex;align-items:center;justify-content:center;font-size:15px}
+.dig{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px 48px;align-items:center}
+.cards6{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.cards6 figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.cards6 img{width:100%;height:auto;display:block;border:1px solid #222}
+.cards6 figcaption{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.team div{background:var(--panel);padding:20px;border-top:3px solid var(--line)}
+.team b{display:block;font-family:var(--an);font-weight:400;font-size:24px;text-transform:uppercase;line-height:1.05}
+.team span{display:block;font-size:13px;color:var(--soft);margin-top:6px}
+.plogos{display:flex;flex-wrap:wrap;align-items:center;gap:20px 44px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.plogos img{height:40px;width:auto;opacity:.9}
+#pw-form{scroll-margin-top:100px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--soft);cursor:pointer}
+.consent input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:#a0f03c}
+.consent a{color:var(--y)}
+@media (max-width:1100px){.pw-num{grid-template-columns:repeat(3,minmax(0,1fr))}.ringz,.dig{grid-template-columns:1fr}.ztiles{grid-template-columns:repeat(2,minmax(0,1fr))}.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.aud{grid-template-columns:1fr}.cards6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.pw-num{grid-template-columns:repeat(2,minmax(0,1fr))}.pw-num .oct .an{font-size:24px}.pw-num .oct em{font-size:10px}.ztiles figure{height:200px}.ztiles figcaption{font-size:17px}.team{grid-template-columns:1fr}.ringpic2 .hz{width:32px;margin:-14px 0 0 -16px;font-size:16px}}
 /* Tabellen */
 .tbl{overflow-x:auto}
 .tbl table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
@@ -962,6 +1005,146 @@ dl.dd dd a{color:var(--y)}
   </div>
 </section>
 
+
+<!-- Unterseite: Partner werden (Sponsoren) -->
+<section class="sec page" id="partner-werden" aria-labelledby="pp-h">
+  <div class="w">
+    <a class="back" href="#top">← Zurück zur Startseite</a>
+    <div class="phead">
+      <div class="kick">Partner werden · Für Sponsoren</div>
+      <h1 class="an" id="pp-h"><span style="display:block">Deine Marke.</span><span class="y" style="display:block">Mitten im Ring.</span></h1>
+      <p class="lead" style="max-width:62ch">Die RINGLIFE Combat Series ist die größte Bare-Knuckle-Organisation in Deutschland. Hinter der Serie steht Ringlife, der größte Kampfsport-Creator Deutschlands. Seine Community trägt jedes Event, live in der Halle, im Stream und auf Social Media.</p>
+      <div class="btns"><a class="btn p" href="#partner-werden" data-to="pw-form">Paket anfragen</a><a class="btn g" href="#partner-werden" data-to="pw-form" data-pick="Sponsoren-Deck">Sponsoren-Deck anfragen</a></div>
+    </div>
+
+    <div class="pblock" style="margin-top:0">
+      <h2 class="an">Die Serie <span class="y">in Zahlen</span></h2>
+      <div class="pw-num">
+        <div class="oct ko"><div class="in2"><small>Aufrufe</small><span class="an">60 Mio.</span><em>über alle Events</em></div></div>
+        <div class="oct"><div class="in2"><small>Instagram</small><span class="an">49,3 Mio.</span><em>Aufrufe, Reels &amp; Storys</em></div></div>
+        <div class="oct"><div class="in2"><small>YouTube</small><span class="an">10,7 Mio.</span><em>Aufrufe, Kämpfe &amp; Vlogs</em></div></div>
+        <div class="oct"><div class="in2"><small>Abonnenten</small><span class="an">113.000</span><em>YouTube RINGLIFE COMBAT</em></div></div>
+        <div class="oct"><div class="in2"><small>Follower</small><span class="an">42.300</span><em>Instagram @ringlife_combat</em></div></div>
+        <div class="oct"><div class="in2"><small>Live vor Ort</small><span class="an">2.000+</span><em>Zuschauer bei RCS 9</em></div></div>
+      </div>
+      <p style="margin-top:18px;font-size:13px;color:var(--mute)">12 Events seit 2024: RCS 1 bis RCS 8 und vier Underground-Events. Aufrufe aller Kampfvideos, Event-Vlogs, Reels und Storys.</p>
+    </div>
+
+    <div class="pblock">
+      <h2 class="an">Wen deine Marke <span class="y">erreicht</span></h2>
+      <p class="lead" style="margin-bottom:28px;max-width:62ch">Junge Männer aus Deutschland, die über klassische Werbung kaum noch zu erreichen sind und jedes Event live, im Stream und auf Social Media verfolgen.</p>
+      <div class="aud">
+        <div><b>96 %</b><h3>Männlich</h3><p>Fast ausschließlich Männer, eine Zielgruppe ohne Streuverlust.</p></div>
+        <div><b>83 %</b><h3>18 bis 35 Jahre</h3><p>Gen Z und Millennials, die Kampfsport live und online verfolgen.</p></div>
+        <div><b>87 %</b><h3>Deutschland</h3><p>Dazu Österreich und die Schweiz, fast alles im DACH-Raum.</p></div>
+      </div>
+    </div>
+
+    <div class="pblock">
+      <h2 class="an">Sponsoren<span class="y">flächen</span></h2>
+      <p class="lead" style="max-width:62ch">Im Ring, in der Halle und digital. Alle Flächen lassen sich einzeln buchen oder zu einem Paket kombinieren.</p>
+
+      <div class="zgrp">Im Ring</div>
+      <div class="ringz">
+        <div class="ringpic2"><img src="rcs/sp-ring.webp" alt="Sechseckiger Ring der RINGLIFE Combat Series mit Sponsorenflächen" loading="lazy" width="845" height="580">
+          <span class="hz" style="left:48%;top:45%">1</span><span class="hz" style="left:64%;top:55%">2</span><span class="hz" style="left:13%;top:41%">3</span><span class="hz" style="left:27%;top:71%">4</span></div>
+        <ul class="zl">
+          <li><b>1</b><div><h3>Ringboden &amp; Tarp</h3><p>Bis zu elf Logo-Flächen auf dem Ringboden, in jeder Kampfszene, jedem Clip und jedem Foto.</p></div></li>
+          <li><b>2</b><div><h3>Eckpolster</h3><p>Bei jeder Rundenpause direkt hinter den Kämpfern.</p></div></li>
+          <li><b>3</b><div><h3>Seiltrenner</h3><p>Auf allen sechs Seiten, in jeder Totalen.</p></div></li>
+          <li><b>4</b><div><h3>Corner Wedges</h3><p>Logo-Aufsteller auf der Ringschürze, im Bild jeder Kamera.</p></div></li>
+        </ul>
+      </div>
+
+      <div class="zgrp">In der Halle &amp; im Livestream</div>
+      <div class="ztiles">
+        <figure><img class="ct" src="rcs/sp-screen.webp" alt="LED-Screens über dem Ring mit Sponsorenlogo" loading="lazy"><figcaption><i>5</i>LED-Screens</figcaption></figure>
+        <figure><img class="ct" src="rcs/sp-presenter.webp" alt="Ring-Presenterin mit Rundenschild" loading="lazy"><figcaption><i>6</i>Rundenschilder</figcaption></figure>
+        <figure><img src="rcs/sp-mic.webp" alt="Mikrofon mit Sponsoren-Würfel" loading="lazy"><figcaption><i>7</i>Mikrofon</figcaption></figure>
+        <figure><img class="ct" src="rcs/sp-live.webp" alt="Livestream mit Logo-Einblendung" loading="lazy"><figcaption><i>8</i>Livestream</figcaption></figure>
+      </div>
+
+      <div class="zgrp">Digital · Sponsored Content</div>
+      <div class="dig">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <h3 class="an" style="font-size:32px;line-height:1"><span class="y">9</span> · Social Media @ringlife_combat</h3>
+          <p style="color:var(--soft)">„Presented by“ auf Match-Ankündigung, Fight Card, Behind the Scenes, Main Event, Siegerbild und Highlights. Auf Instagram und Facebook der RINGLIFE Combat Series, von der Ankündigung bis nach dem Event.</p>
+        </div>
+        <div class="cards6">
+          <figure><img src="rcs/sp-c1.webp" alt="" loading="lazy"><figcaption>Ankündigung</figcaption></figure>
+          <figure><img src="rcs/sp-c2.webp" alt="" loading="lazy"><figcaption>Fight Card</figcaption></figure>
+          <figure><img src="rcs/sp-c3.webp" alt="" loading="lazy"><figcaption>Behind the Scenes</figcaption></figure>
+          <figure><img src="rcs/sp-c4.webp" alt="" loading="lazy"><figcaption>Main Event</figcaption></figure>
+          <figure><img src="rcs/sp-c5.webp" alt="" loading="lazy"><figcaption>Sieger</figcaption></figure>
+          <figure><img src="rcs/sp-c6.webp" alt="" loading="lazy"><figcaption>Highlights</figcaption></figure>
+        </div>
+      </div>
+      <p style="margin-top:18px;font-size:13px;color:var(--mute)">Beispielhafte Darstellung. Pakete individuell kombinierbar.</p>
+    </div>
+
+    <div class="pblock">
+      <h2 class="an">Partner der <span class="y">Serie</span></h2>
+      <div class="plogos">
+        <img src="lg/esn.png" alt="ESN"><img src="lg/zasta.png" alt="Zasta"><img src="lg/harley.png" alt="Harley-Davidson"><img src="lg/ringlife-fw.png" alt="RINGLIFE Fightwear"><img src="lg/innovation.png" alt="Innovation Media"><img src="lg/nft.png" alt="NFT National Fighting Team">
+      </div>
+    </div>
+
+    <div class="pblock">
+      <h2 class="an">Hinter der <span class="y">Serie</span></h2>
+      <div class="team">
+        <div><b>Ringlife</b><span>Edmon Avagyan, größter Kampfsport-Creator Deutschlands</span></div>
+        <div><b>Innovation Media AG</b><span>NFC und FAME Fighting</span></div>
+        <div><b>Nils Rurainski</b><span>Head of Partnerships, Spotlight Talents</span></div>
+        <div><b>Thomas de Buhr</b><span>Gründer der Baller League</span></div>
+        <div><b>Jochen Maaß</b><span>Gründer und CEO von Hanse Ventures</span></div>
+      </div>
+    </div>
+
+    <div class="pblock nextf"><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächstes Event · 28.11.2026 · Dresden</small><div class="an">RCS 9: Letzter Sponsorenplatz frei</div><p>Combat Circus im Dresdner Weihnachts-Circus, vor über 2.000 Zuschauern.</p></div><a class="btn k" href="#partner-werden" data-to="pw-form">Jetzt anfragen</a></div>
+
+    <div class="pblock inf" id="pw-form">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <h2 class="an" style="font-size:clamp(40px,4.6vw,64px);line-height:.98">Werde unser <span class="y">Partner.</span></h2>
+        <p class="lead">Werde Hauptpartner der Serie oder sichere dir einzelne Flächen. Exklusivität in deiner Branche und ein Paket, das zu dir passt.</p>
+        <p style="color:var(--soft)">Antwort in der Regel innerhalb von 24 Stunden. Oder direkt per Mail an <a href="mailto:nr@spotlight-talents.com" style="color:var(--y)">nr@spotlight-talents.com</a></p>
+        <p style="font-size:13px;color:var(--mute)">Das Sponsoring der RINGLIFE Combat Series betreut Spotlight Talents.</p>
+      </div>
+      <div class="fbox">
+        <form id="f-partner" name="partner-anfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="partner-anfrage">
+          <p hidden><label>Nicht ausfüllen <input name="bot-field"></label></p>
+          <fieldset style="border:0;margin:0;padding:0"><legend class="lbl">Ich interessiere mich für</legend>
+            <div class="chips">
+              <label><input type="radio" name="interesse" value="Hauptpartner" checked><span>Hauptpartner</span></label>
+              <label><input type="radio" name="interesse" value="Einzelne Fläche"><span>Einzelne Fläche</span></label>
+              <label><input type="radio" name="interesse" value="Sponsoren-Deck"><span>Sponsoren-Deck</span></label>
+            </div>
+          </fieldset>
+          <div class="two">
+            <label class="fl lbl" for="p-name">Name<input type="text" id="p-name" name="name" autocomplete="name" required></label>
+            <label class="fl lbl" for="p-firma">Unternehmen<input type="text" id="p-firma" name="unternehmen" autocomplete="organization" required></label>
+          </div>
+          <div class="two">
+            <label class="fl lbl" for="p-mail">E-Mail<input type="email" id="p-mail" name="email" autocomplete="email" required></label>
+            <label class="fl lbl" for="p-tel">Telefon<input type="tel" id="p-tel" name="telefon" autocomplete="tel" placeholder="optional"></label>
+          </div>
+          <fieldset style="border:0;margin:0;padding:0"><legend class="lbl">Was ist dir wichtig?</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="ziele" value="Branding / Logo-Platzierung"><span>Branding / Logo</span></label>
+              <label><input type="checkbox" name="ziele" value="Reichweite auf Social Media"><span>Social-Media-Reichweite</span></label>
+              <label><input type="checkbox" name="ziele" value="Live Experience"><span>Live Experience</span></label>
+            </div>
+          </fieldset>
+          <label class="fl lbl" for="p-msg">Nachricht<textarea id="p-msg" name="nachricht" rows="4" placeholder="Branche, Budgetrahmen, Wunschtermin"></textarea></label>
+          <label class="consent"><input type="checkbox" name="einwilligung" value="ja" required><span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden. Mehr in der <a href="#datenschutz">Datenschutzerklärung</a>.</span></label>
+          <button type="submit">Anfrage senden</button>
+          <p class="done" id="ok-partner" hidden>Danke! Deine Anfrage ist angekommen. Du bekommst innerhalb von 24 Stunden eine Antwort mit Konzept und freien Flächen.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Unterseite: Impressum -->
 <section class="sec page" id="impressum" aria-labelledby="pi-h">
   <div class="w">
@@ -1103,7 +1286,7 @@ dl.dd dd a{color:var(--y)}
       <p style="margin-top:18px;font-size:15px;max-width:34ch;color:var(--mute)">Deutschlands größte Bare-Knuckle-Organisation. Für alle, die ihren Weg gehen.</p>
     </div>
     <div><h4>Events</h4><ul><li><a href="#rcs-9">RCS 9 Combat Circus</a></li><li><a href="#fighter">Fighter</a></li><li><a href="#regeln">Regeln</a></li><li><a href="#alle-events">Alle Events</a></li><li><a href="#formate">Formate</a></li><li><a href="https://www.ringlife-tickets.de" target="_blank" rel="noopener">Tickets</a></li></ul></div>
-    <div><h4>Mitmachen</h4><ul><li><a href="#fighter-werden">Fighter werden</a></li><li><a href="#tickets">Tickets &amp; FAQ</a></li><li><a href="https://spotlight-talents.com/talents/ringlife-combat-series" target="_blank" rel="noopener">Partner werden</a></li><li><a href="#newsletter">Newsletter</a></li></ul></div>
+    <div><h4>Mitmachen</h4><ul><li><a href="#fighter-werden">Fighter werden</a></li><li><a href="#tickets">Tickets &amp; FAQ</a></li><li><a href="#partner-werden">Partner werden</a></li><li><a href="#newsletter">Newsletter</a></li></ul></div>
     <div><h4>Folgen</h4><ul><li><a href="https://www.instagram.com/ringlife_combat/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/@RINGLIFECOMBAT" target="_blank" rel="noopener">YouTube</a></li><li><a href="#shop">RINGLIFE Fightwear</a></li></ul></div>
     <div class="legal"><span>© 2026 RINGLIFE Entertainment GmbH</span><span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <a href="https://rcs.myshow.de/agb" target="_blank" rel="noopener">Ticket-AGB</a> · Eintritt ab 18</span><span>Fight for your way.</span></div>
   </div>
@@ -1177,11 +1360,16 @@ dl.dd dd a{color:var(--y)}
   b.addEventListener('click',function(){var o=hdr.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'✕':'☰'});
   document.getElementById('menu').addEventListener('click',function(e){if(e.target.closest('a')){hdr.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='☰'}});
 
+  // Sprung zum Formular innerhalb einer Unterseite
+  document.querySelectorAll('[data-to]').forEach(function(a){a.addEventListener('click',function(e){
+    var t=document.getElementById(a.getAttribute('data-to'));if(!t)return;e.preventDefault();
+    var pk=a.getAttribute('data-pick');if(pk){var r=t.querySelector('input[value="'+pk+'"]');if(r)r.checked=true}
+    t.scrollIntoView({behavior:'smooth',block:'start'})})});
   // Formulare: Versand über Netlify Forms
-  [['f-fighter','ok-fighter'],['f-news','ok-news']].forEach(function(x){
+  [['f-fighter','ok-fighter'],['f-news','ok-news'],['f-partner','ok-partner']].forEach(function(x){
     var f=document.getElementById(x[0]);
     f.addEventListener('submit',function(e){e.preventDefault();
-      var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(i){return !i.value.trim()||!i.checkValidity()});
+      var bad=[].slice.call(f.querySelectorAll('[required]')).filter(function(i){return (i.type==='checkbox'?!i.checked:!i.value.trim())||!i.checkValidity()});
       if(bad.length){bad[0].focus();return}
       var ok=document.getElementById(x[1]),btn=f.querySelector('button[type=submit]');
       btn.disabled=true;
