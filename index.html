@@ -449,6 +449,30 @@ body.on-page main>.page.cur{display:block}
   .pwh .spons{order:4;position:relative}
   #rail-pw .row .info .val{font-size:44px}#rail-pw .row .info .pf b{font-size:22px}
 }
+/* Übergänge Partner-Seite */
+.kband{position:relative;width:100vw;margin:clamp(72px,8vw,112px) 0 0 calc(50% - 50vw);overflow:hidden;display:flex;flex-direction:column;gap:4px}
+.kb{display:flex;align-items:center;gap:.45em;width:max-content;white-space:nowrap;font-family:var(--an);font-size:clamp(38px,5.6vw,84px);line-height:1;text-transform:uppercase;padding:.14em 0;will-change:transform}
+.kb i{flex:none;width:.42em;aspect-ratio:1/.866;clip-path:var(--hex);background:currentColor}
+.kb1{background:var(--y);color:#000;transform:translateX(-12%)}
+.kbo{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45);transform:translateX(-30%)}
+.kbo i{background:var(--y);opacity:.8}
+.hexdiv{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,22px);margin-top:clamp(72px,8vw,112px)}
+.hexdiv::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--y) 20%,var(--y) 80%,transparent)}
+.hexdiv span{position:relative;width:clamp(16px,2vw,26px);aspect-ratio:1/.866;clip-path:var(--hex);background:var(--y)}
+.hexdiv span:nth-child(5){width:clamp(30px,3.6vw,48px)}
+.hexdiv span:nth-child(odd):not(:nth-child(5)){background:#fff}
+html.tx .hexdiv::before{transform:scaleX(0);transition:transform 1s cubic-bezier(.7,0,.2,1)}
+html.tx .hexdiv span{transform:scale(0) rotate(-60deg);transition:transform .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(.35s + var(--i) * 90ms)}
+html.tx .hexdiv.in::before{transform:none}
+html.tx .hexdiv.in span{transform:none}
+html.tx [data-wipe]{position:relative;width:fit-content;clip-path:inset(-10% 100% -10% 0);transition:clip-path .85s cubic-bezier(.7,0,.2,1)}
+html.tx [data-wipe]::after{content:"";position:absolute;top:-8%;bottom:-8%;left:0;width:22px;background:var(--y);transform:skewX(-11deg);opacity:0}
+html.tx [data-wipe].in{clip-path:inset(-10% -40px -10% 0)}
+html.tx [data-wipe].in::after{animation:slash .85s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes slash{0%{left:-22px;opacity:1}80%{left:calc(100% + 4px);opacity:1}100%{left:calc(100% + 4px);opacity:0}}
+html.tx [data-slide]{transform:translateX(-8%) skewX(-11deg);opacity:0;transition:transform .8s cubic-bezier(.2,.8,.2,1),opacity .5s}
+html.tx [data-slide].in{transform:none;opacity:1}
+@media (prefers-reduced-motion:reduce){.kb{transform:none!important}}
 /* Partner werden */
 .pw-num{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
 .pw-num .oct{max-width:none}
@@ -1066,6 +1090,8 @@ dl.dd dd a{color:var(--y)}
       <p style="margin-top:18px;font-size:13px;color:var(--mute)">12 Events seit 2024: RCS 1 bis RCS 8 und vier Underground-Events. Aufrufe aller Kampfvideos, Event-Vlogs, Reels und Storys.</p>
     </div>
 
+    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i><span>Bare Knuckle</span><i></i><span>60 Mio. Aufrufe</span><i></i><span>2.000+ live</span><i></i><span>Livestream</span><i></i><span>YouTube</span><i></i><span>Instagram</span><i></i></div><div class="kb kb2 kbo"><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i><span>Fight for your way</span><i></i><span>Ring</span><i></i><span>Halle</span><i></i><span>Stream</span><i></i><span>Social</span><i></i></div></div>
+
     <div class="pblock">
       <h2 class="an">Wen deine Marke <span class="y">erreicht</span></h2>
       <p class="lead" style="margin-bottom:28px;max-width:62ch">Junge Männer aus Deutschland, die über klassische Werbung kaum noch zu erreichen sind und jedes Event live, im Stream und auf Social Media verfolgen.</p>
@@ -1083,6 +1109,8 @@ dl.dd dd a{color:var(--y)}
       </div>
       <div class="rail" id="rail-pw"><div class="line go ly" aria-hidden="true"></div></div>
     </div>
+
+    <div class="kband" aria-hidden="true"><div class="kb kb1"><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i><span>Deine Marke</span><i></i><span>Im Ring</span><i></i><span>In der Halle</span><i></i><span>Im Stream</span><i></i><span>Auf Social Media</span><i></i></div><div class="kb kb2 kbo"><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i><span>Sponsoring</span><i></i><span>Branding</span><i></i><span>Reichweite</span><i></i><span>Live Experience</span><i></i></div></div>
 
     <div class="pblock">
       <h2 class="an">Sponsoren<span class="y">flächen</span></h2>
@@ -1126,6 +1154,8 @@ dl.dd dd a{color:var(--y)}
       <p style="margin-top:18px;font-size:13px;color:var(--mute)">Beispielhafte Darstellung. Pakete individuell kombinierbar.</p>
     </div>
 
+    <div class="hexdiv" data-tx aria-hidden="true"><span style="--i:4"></span><span style="--i:3"></span><span style="--i:2"></span><span style="--i:1"></span><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span></div>
+
     <div class="pblock">
       <h2 class="an">Hinter der <span class="y">Serie</span></h2>
       <div class="team">
@@ -1137,7 +1167,7 @@ dl.dd dd a{color:var(--y)}
       </div>
     </div>
 
-    <div class="pblock nextf"><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächstes Event · 28.11.2026 · Dresden</small><div class="an">RCS 9: Letzter Sponsorenplatz frei</div><p>Combat Circus im Dresdner Weihnachts-Circus, vor über 2.000 Zuschauern.</p></div><a class="btn k" href="#partner-werden" data-to="pw-form">Jetzt anfragen</a></div>
+    <div class="pblock nextf" data-tx data-slide><div><small style="font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Nächstes Event · 28.11.2026 · Dresden</small><div class="an">RCS 9: Letzter Sponsorenplatz frei</div><p>Combat Circus im Dresdner Weihnachts-Circus, vor über 2.000 Zuschauern.</p></div><a class="btn k" href="#partner-werden" data-to="pw-form">Jetzt anfragen</a></div>
 
     <div class="pblock inf" id="pw-form">
       <div style="display:flex;flex-direction:column;gap:20px">
@@ -1398,6 +1428,40 @@ dl.dd dd a{color:var(--y)}
     var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('go');io.unobserve(x.target)}})},{threshold:0});
     items.forEach(function(e){io.observe(e)});
   }
+
+  // Übergänge auf der Partner-Seite: Wisch-Effekt, Hexagon-Trenner, Zähler, Laufbänder
+  (function(){
+    var pg=document.getElementById('partner-werden');
+    if(!pg||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    // Überschriften: Der Clip-Pfad versteckt sie, deshalb beobachten wir den umgebenden Block
+    pg.querySelectorAll('.pblock h2').forEach(function(h){h.setAttribute('data-wipe','');h.parentNode.__wipe=h});
+    document.documentElement.classList.add('tx');
+    function fmt(v,d){return v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d})}
+    function count(el){
+      var m=el.textContent.match(/^([\d.,]+)(.*)$/);if(!m)return;
+      var raw=m[1],suf=m[2],dec=(raw.split(',')[1]||'').length,val=parseFloat(raw.replace(/\./g,'').replace(',','.'));
+      var grp=raw.indexOf('.')>-1,t0=null;
+      function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-k,3),v=val*e;
+        var s=dec?fmt(v,dec):(grp?fmt(Math.round(v),0):String(Math.round(v)));el.textContent=s+suf;if(k<1)requestAnimationFrame(step)}
+      requestAnimationFrame(step);
+    }
+    var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;
+      var t=x.target;t.classList.add('in');if(t.__wipe)t.__wipe.classList.add('in');if(t.hasAttribute('data-count'))count(t);io2.unobserve(t)})},{threshold:.35});
+    pg.querySelectorAll('.pw-num .an,.aud b,.pwh-hex .an').forEach(function(e){e.setAttribute('data-count','');io2.observe(e)});
+    pg.querySelectorAll('[data-tx]').forEach(function(e){io2.observe(e)});
+    var io3=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.__wipe.classList.add('in');io3.unobserve(x.target)}})},{rootMargin:'0px 0px -18% 0px'});
+    pg.querySelectorAll('[data-wipe]').forEach(function(h){io3.observe(h.parentNode)});
+    // Laufbänder und Hintergrundtext bewegen sich mit dem Scrollen
+    var bands=[].slice.call(pg.querySelectorAll('.kband')),bg=pg.querySelector('.pwh .bgtxt'),tick2=false;
+    function move(){tick2=false;if(!document.body.classList.contains('on-page')||!pg.classList.contains('cur'))return;
+      var vh=innerHeight;
+      bands.forEach(function(b){var r=b.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var k=(vh-r.top)/(vh+r.height);
+        b.children[0].style.transform='translateX('+(-6-k*22)+'%)';b.children[1].style.transform='translateX('+(-34+k*22)+'%)'});
+      if(bg){var y=scrollY;if(y<1200)bg.style.transform='rotate(-11deg) translateX('+(-y*0.25)+'px)'}
+    }
+    addEventListener('scroll',function(){if(!tick2){tick2=true;requestAnimationFrame(move)}},{passive:true});
+    addEventListener('hashchange',function(){setTimeout(move,50)});move();
+  })();
 
   // Countdown bis RCS 9 (Beginn 18:00 Uhr laut Ticketshop)
   var target=new Date('2026-11-28T18:00:00+01:00').getTime();
